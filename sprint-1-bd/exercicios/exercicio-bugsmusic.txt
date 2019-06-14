@@ -1,0 +1,33 @@
+Inserir Gêneros
+	Rock, Sertanejo, Pop
+
+Inserir Bandas 
+	Ultraje a Rigor - Rock, Fernando e Sorocaba - Sertanejo, Barão Vermelho - Pop
+
+Inserir Álbuns
+	Ultraje a Rigor - Recomeço, 	Fernando e Sorocaba -  Vendaval, Barão Vermelho - Maior Abandonado
+
+Inserir Músicas
+	Inútil - Recomeço
+	Mim Quer - Vendaval
+	Paga Pau - Vendaval
+	Baby Suporte - Maior Abandonado
+	Sem Querer Tocar - Recomeço
+	Vendavagonha - Maior Abandonado
+
+Inserir Cantores_Bandas
+	Roger Moreira - Ultraje a Rigor
+	Mingau - Ultraje a Rigor
+	Bacalhau - Ultraje a Rigor
+	Marcos Kleine - Ultraje a Rigor
+	Fernando Zorzanello Bonifácio - Fernando e Sorocaba
+	Fernando Fakri de Assis - Fernando e Sorocaba
+	Guto Goffi - Barão Vermelho
+	Maurício Barros - Barão Vermelho
+	Fernando Magalhães - Barão Vermelho 
+	 
+
+- Informe qual Gênero das Bandas
+- Informe os Álbuns de cada Banda
+- Informe as musicas de cada Banda
+- Informe os Cantores de cada Banda
