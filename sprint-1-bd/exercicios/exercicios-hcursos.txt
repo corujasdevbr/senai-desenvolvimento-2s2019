@@ -1,0 +1,4 @@
+Uma nova empresa na área da educação chamada HCursos deseja realizar a estrutura da sua base de dados para atender a sua nova demanda de cursos.
+Para isto, você deverá realizar a modelagem com base nos requisitos abaixo:
+Cada curso poderá ter somente uma categoria e um professor que irá lecionar essa matéria. Porém, cada aluno poderá participar de mais de um curso.
+Ele solicitou que toda a documentação seja entregue seguindo as melhores práticas de mercado.
