@@ -1,1 +1,2 @@
 Cada livro possuirá um determinado autor e cada livro poderá ser de mais de um tipo (gênero). Ação e Romance. Romance e Aventura. Ação e Aventura, por exemplo.
+Além disso, os autores podem estar ativos ou não ativos no sistema.
