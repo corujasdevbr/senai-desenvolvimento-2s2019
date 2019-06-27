@@ -11,6 +11,13 @@ CREATE TABLE Estilos
 CREATE TABLE Artistas
 (
     IdArtista     INT PRIMARY KEY IDENTITY
-    ,Nome	  VARCHAR(200) UNIQUE
+    ,Nome		  VARCHAR(200) UNIQUE
     ,IdEstilo     INT FOREIGN KEY REFERENCES Estilos (IdEstilo)
 );
+
+SELECT * FROM Estilos;
+
+INSERT INTO Estilos VALUES ('Folk');
+INSERT INTO Artistas VALUES ('Stu Larsen', 4);
+
+SELECT * FROM ARTISTAS;
