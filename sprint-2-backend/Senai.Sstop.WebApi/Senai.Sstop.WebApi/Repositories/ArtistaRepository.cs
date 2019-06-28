@@ -68,7 +68,8 @@ namespace Senai.Sstop.WebApi.Repositories
                 SqlCommand cmd = new SqlCommand(QueryASerExecutada, con);
                 //Passa o valor do parametro
                 cmd.Parameters.AddWithValue("@Nome", artistaDomain.Nome);
-                cmd.Parameters.AddWithValue("@IdEstilo", artistaDomain.Estilo.IdEstilo);
+                cmd.Parameters.AddWithValue("@IdEstilo", artistaDomain.EstiloId);
+                //cmd.Parameters.AddWithValue("@IdEstilo", artistaDomain.Estilo.IdEstilo);
                 //abre a conexão
                 con.Open();
                 //Executa o comando

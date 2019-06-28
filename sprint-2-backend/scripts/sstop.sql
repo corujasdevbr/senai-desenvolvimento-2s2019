@@ -21,3 +21,5 @@ INSERT INTO Estilos VALUES ('Folk');
 INSERT INTO Artistas VALUES ('Stu Larsen', 4);
 
 SELECT * FROM ARTISTAS;
+
+SELECT A.IdArtista, A.Nome, A.IdEstilo, E.Nome AS NomeEstilo FROM Artistas A INNER JOIN Estilos E ON A.IdEstilo = E.IdEstilo;
