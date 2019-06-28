@@ -1,0 +1,217 @@
+{
+	"info": {
+		"_postman_id": "49eb127b-49aa-4ccc-aea2-57438830a9ff",
+		"name": "Senai.Sstop",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Estilos",
+			"item": [
+				{
+					"name": "Estilos.Listar",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/api/estilos",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"estilos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Estilos.BuscarPorId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/api/estilos/1",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"estilos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Estilos.Cadastrar",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"nome\" : \"Folk\"\n}"
+						},
+						"url": {
+							"raw": "localhost:5000/api/estilos",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"estilos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Estilos.Deletar",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/api/estilos/1",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"estilos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Estilos.Atualizar",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"idEstilo\" : 2,\n\t\"nome\" : \"Alternative\"\n}"
+						},
+						"url": {
+							"raw": "localhost:5000/api/estilos",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"estilos"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Artistas",
+			"item": [
+				{
+					"name": "Artistas.Listar",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/api/artistas",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"artistas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Artistas.Cadastrar",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nome\": \"Local Natives\",\n    \"estiloId\": 4\n}"
+						},
+						"url": {
+							"raw": "localhost:5000/api/artistas",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"artistas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Artistas.Cadastrar.Objeto",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nome\": \"Local Natives\",\n    \"estilo\": {\n        \"idEstilo\": 4\n    }\n}"
+						},
+						"url": {
+							"raw": "localhost:5000/api/artistas",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"artistas"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
