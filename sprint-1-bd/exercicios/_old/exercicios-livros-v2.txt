@@ -1,0 +1,10 @@
+Livro contém nome, n° de páginas, autor, editora e gênero.
+Autor contém nome, email, data Nascimento.
+Editora contém somente o nome.
+
+Um livro faz parte de uma única editora.
+Um livro pode ter vários gêneros ex.: Ação e aventura.
+Um livro tem um único altor.
+
+Um autor pode ou não estar ativo no sitema.
+

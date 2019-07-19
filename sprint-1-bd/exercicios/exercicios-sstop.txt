@@ -1,1 +1,6 @@
 Você deverá construir a modelagem para que seja cadastrado os estilos musicais de determinados artistas. Lembre-se de que cada artista poderá ter somente um estilo musical vinculado.
+
+DML 
+- inserir os estilos Rock'n Roll, Metal, MPB e mais 5 a sua escolha
+- inserir os artistas Legião Urbana como Rock'n Roll, Metallica como Metal e mais 10 artistas a sua escolha
+- alterar o estilo do artista Legião Urbana de Rock'n Roll para MPB
