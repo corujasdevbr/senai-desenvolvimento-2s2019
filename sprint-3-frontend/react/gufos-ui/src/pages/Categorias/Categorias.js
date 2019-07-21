@@ -15,13 +15,34 @@ class Categorias extends Component {
   constructor() {
     super();
     this.state = {
-      lista: []
+      lista: [],
+      nome: ""
       //   [
       //     { idCategoria: 1, nome: "Design" },
       //     { idCategoria: 2, nome: "Jogos" },
       //     { idCategoria: 3, nome: "Meetup" }
       //   ]
     };
+
+    this.cadastrarCategoria = this.cadastrarCategoria.bind(this);
+  }
+
+  cadastrarCategoria(event) {
+    event.preventDefault();
+    fetch("http://localhost:5000/api/categorias", {
+      method: "POST",
+      body: JSON.stringify({ nome: this.state.nome }),
+      headers: {
+        "Content-Type": "application/json"
+      }
+    })
+      .then(response => response.json())
+      .then(this.listarCategorias())
+      .catch(error => console.log(error));
+  }
+
+  atualizaNome(event) {
+    this.setState({ nome: event.target.value });
   }
 
   listarCategorias() {
@@ -31,7 +52,7 @@ class Categorias extends Component {
   }
 
   componentDidMount() {
-      this.listarCategorias();
+    this.listarCategorias();
   }
 
   render() {
@@ -72,10 +93,12 @@ class Categorias extends Component {
               <h2 className="conteudoPrincipal-cadastro-titulo">
                 Cadastrar Categoria
               </h2>
-              <form>
+              <form onSubmit={this.cadastrarCategoria}>
                 <div className="container">
                   <input
                     type="text"
+                    value={this.state.nome}
+                    onChange={this.atualizaNome.bind(this)}
                     className="className__categoria"
                     id="input__categoria"
                     placeholder="tipo do evento"
