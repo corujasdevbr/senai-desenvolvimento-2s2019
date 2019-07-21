@@ -12,6 +12,28 @@ import logo from "../../assets/img/icon-login.png";
 import Rodape from "../../componentes/Rodape";
 
 class Categorias extends Component {
+  constructor() {
+    super();
+    this.state = {
+      lista: []
+      //   [
+      //     { idCategoria: 1, nome: "Design" },
+      //     { idCategoria: 2, nome: "Jogos" },
+      //     { idCategoria: 3, nome: "Meetup" }
+      //   ]
+    };
+  }
+
+  listarCategorias() {
+    fetch("http://localhost:5000/api/categorias")
+      .then(response => response.json())
+      .then(data => this.setState({ lista: data }));
+  }
+
+  componentDidMount() {
+      this.listarCategorias();
+  }
+
   render() {
     return (
       <div>
@@ -33,7 +55,16 @@ class Categorias extends Component {
                   </tr>
                 </thead>
 
-                <tbody id="tabela-lista-corpo" />
+                <tbody id="tabela-lista-corpo">
+                  {this.state.lista.map(function(categoria) {
+                    return (
+                      <tr key={categoria.idCategoria}>
+                        <td>{categoria.idCategoria}</td>
+                        <td>{categoria.nome}</td>
+                      </tr>
+                    );
+                  })}
+                </tbody>
               </table>
             </div>
 

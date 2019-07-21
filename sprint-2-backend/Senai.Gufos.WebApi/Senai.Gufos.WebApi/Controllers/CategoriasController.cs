@@ -17,7 +17,7 @@ namespace Senai.Gufos.WebApi.Controllers
     {
         CategoriaRepository CategoriaRepository = new CategoriaRepository();
 
-        [Authorize]
+        // [Authorize]
         [HttpGet]
         public IActionResult ListarTodos()
         {
@@ -38,7 +38,7 @@ namespace Senai.Gufos.WebApi.Controllers
             }
         }
 
-        [Authorize(Roles = "ADMINISTRADOR")]
+        // [Authorize(Roles = "ADMINISTRADOR")]
         [HttpGet("{id}")]
         public IActionResult BuscarPorId(int id)
         {
