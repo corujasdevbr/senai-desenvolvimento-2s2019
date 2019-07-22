@@ -11,6 +11,8 @@ import logo from "../../assets/img/icon-login.png";
 // importar Rodape
 import Rodape from "../../componentes/Rodape";
 
+import Titulo from "../../componentes/Titulo";
+
 class Categorias extends Component {
   constructor() {
     super();
@@ -66,7 +68,8 @@ class Categorias extends Component {
 
         <main className="conteudoPrincipal">
           <section className="conteudoPrincipal-cadastro">
-            <h1 className="conteudoPrincipal-cadastro-titulo">Categorias</h1>
+            {/* <h1 className="conteudoPrincipal-cadastro-titulo">Categorias</h1> */}
+            <Titulo titulo="Teste" />
             <div className="container" id="conteudoPrincipal-lista">
               <table id="tabela-lista">
                 <thead>

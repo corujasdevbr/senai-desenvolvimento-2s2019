@@ -13,6 +13,7 @@ import "./index.css";
 import App from "./pages/Home/App";
 // incluir página
 import Categorias from "./pages/Categorias/Categorias";
+import Eventos from "./pages/Eventos/Eventos";
 
 import Login from "./pages/Login/Login";
 
@@ -42,6 +43,7 @@ const routing = (
         <Route exact path="/" component={App} />
         {/* <Route path="/categorias" component={Categorias} /> */}
         <RotaPrivada path="/categorias" component={Categorias} />
+        <RotaPrivada path="/eventos" component={Eventos} />
         <Route path="/login" component={Login} />
         <Route component={NaoEncontrada} />
       </Switch>
