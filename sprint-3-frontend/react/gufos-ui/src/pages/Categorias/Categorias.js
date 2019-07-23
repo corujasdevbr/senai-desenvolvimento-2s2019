@@ -69,7 +69,7 @@ class Categorias extends Component {
         <main className="conteudoPrincipal">
           <section className="conteudoPrincipal-cadastro">
             {/* <h1 className="conteudoPrincipal-cadastro-titulo">Categorias</h1> */}
-            <Titulo titulo="Teste" />
+            <Titulo titulo="Categorias" />
             <div className="container" id="conteudoPrincipal-lista">
               <table id="tabela-lista">
                 <thead>
