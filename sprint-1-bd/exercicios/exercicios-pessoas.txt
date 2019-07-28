@@ -1,1 +1,1 @@
-crie uma tabela onde possa ser insido uma pessoa com telefone e email
+Uma pessoa pode ter vários telefones e vários emails, porém, pode conter somente uma CNH.

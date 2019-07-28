@@ -1,0 +1,1 @@
+Uma determinada camiseta pode pertencer somente a uma marca (ex.: Khelf), porém, pode ter várias cores (ex.: branca, vermelha, azul, roxo e verde) e diferentes números (ex.: P, M, G e GG).
