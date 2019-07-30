@@ -44,3 +44,5 @@ alter table PedidosColaboradores alter column IdColaborador int not null
 alter table Pedidos alter column IdCliente int not null
 alter table Pedidos alter column IdItem int not null
 alter table Pedidos alter column IdTipo int not null
+alter table Pedidos alter column Entrada datetime not null
+alter table Pedidos alter column Saida datetime
