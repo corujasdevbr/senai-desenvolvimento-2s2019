@@ -1,3 +1,5 @@
+create database MicroManu;
+
 use MicroManu;
 
 create table Clientes(
@@ -18,7 +20,7 @@ create table TipoConsertos(
 create table Colaboradores(
 	IdColaborador int identity not null primary key,
 	Nome varchar(255) not null,
-	CPF varchar(11),
+	CPF varchar(11) unique not null,
 	Salario float(2) not null
 );
 
@@ -42,4 +44,3 @@ alter table PedidosColaboradores alter column IdColaborador int not null
 alter table Pedidos alter column IdCliente int not null
 alter table Pedidos alter column IdItem int not null
 alter table Pedidos alter column IdTipo int not null
-alter table Colaboradores alter column CPF varchar(11) not null
