@@ -1,7 +1,8 @@
-CREATE DATABASE RoteiroSstop;
+CREATE DATABASE Sstop;
 
-USE RoteiroSstop;
+USE Sstop;
 
+-- DDL
 CREATE TABLE Estilos
 (
     IdEstilo    INT PRIMARY KEY IDENTITY
@@ -14,3 +15,14 @@ CREATE TABLE Artistas
     ,Nome	  VARCHAR(200) UNIQUE
     ,IdEstilo     INT FOREIGN KEY REFERENCES Estilos (IdEstilo)
 );
+
+-- DML
+INSERT INTO Estilos (Nome) VALUES ('Folk');
+INSERT INTO Estilos VALUES ('Rock'), ('Pop');
+
+UPDATE Estilos SET Nome = 'POp' WHERE IdEstilo = 2;
+
+DELETE FROM Estilos WHERE IdEstilo = 2;
+
+-- DQL
+SELECT * FROM Estilos;

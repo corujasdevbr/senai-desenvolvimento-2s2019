@@ -1,1 +1,0 @@
-Cada pessoa poderá possuir muitos emails, bem como, diferentes telefones. Porém, poderá possuir somente um documento (CNH, por exemplo).

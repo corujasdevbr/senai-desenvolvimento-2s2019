@@ -19,10 +19,10 @@ CREATE TABLE Autores
 
 CREATE TABLE Livros
 (
-    IdLivro         INT PRIMARY KEY IDENTITY
-    ,Descricao      VARCHAR(255) NOT NULL UNIQUE
-    ,IdAutor         INT FOREIGN KEY REFERENCES Autores (IdAutor)
-	,IdGenero         INT FOREIGN KEY REFERENCES Generos (IdGenero)
+    IdLivro             INT PRIMARY KEY IDENTITY
+    ,Descricao          VARCHAR(255) NOT NULL UNIQUE
+    ,IdAutor            INT FOREIGN KEY REFERENCES Autores (IdAutor)
+	,IdGenero           INT FOREIGN KEY REFERENCES Generos (IdGenero)
 );
 
 --CREATE TABLE LivrosGeneros
