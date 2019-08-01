@@ -13,3 +13,8 @@ DQL
 - Selecionar todos os registros da tabela de artista;
 - Selecionar todos os registros da tabela de estilos;
 - Selecionar todos os registros da tabela de artistas e seus respectivo estilos;
+
+Desafios Extras
+- Alterar a tabela de artistas, para que adicione uma coluna de data de criação da banda;
+- Alterar a tabela de estilos, para que adicione uma coluna de descrição do estilo. Para contar sobre a sua origem e que seja um espaço maior do que 255 caracteres. Seja do tipo texto longo;
+- Alterar a tabela de artistas, para que adicione uma coluna para saber se o artista ainda faz parte do cenário musical;
