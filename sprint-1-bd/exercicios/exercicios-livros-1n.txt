@@ -16,3 +16,8 @@ DQL
 - Selecionar todos os livros e seus respectivos autores;
 - Selecionar todos os livros e seus respectivos gêneros;
 - Selecionar todos os livros e seus respectivos autores e gêneros;
+
+Desafios Extras
+- Incluir uma coluna para incluir a sinopse dos livros;
+- Incluir uma coluna de data de lançamento do livro;
+- Incluir uma coluna para identificar que o livro ainda está sendo veiculado.
