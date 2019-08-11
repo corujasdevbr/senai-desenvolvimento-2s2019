@@ -37,28 +37,27 @@ SELECT TRIM('    Livro Vol. 1    ') AS Resultado;
 
 ----------------------------- STORED PROCEDURES -----------------------------
 
-
 --Criar um SP (Stored Procedure)
-CREATE PROCEDURE SelecionarTodasPessoas -- Nome da procedure
+CREATE PROCEDURE SelecionarUsuarios -- Nome da procedure
 AS
-SELECT * FROM PESSOAS -- Consulta
+SELECT IdUsuario, Nome, Email, Permissao FROM Usuarios;
 
-EXEC SelecionarTodasPessoas; -- Executar Procedure
+EXEC SelecionarUsuarios; -- Executar Procedure
 
 
 --Com declaração de variável
-CREATE PROCEDURE BuscarNome
-@Nome VARCHAR(250)
+CREATE PROCEDURE BuscarUsuarioPorEmail
+@Email VARCHAR(250)
 AS
-SELECT NOME FROM PESSOAS WHERE NOME = @Nome -- Utilizando variável como filtro para a consulta
+SELECT IdUsuario, Nome, Email, Permissao FROM Usuarios WHERE Email = @Email; -- Utilizando variável como filtro para a consulta
 
-EXEC BuscarNome 'Jefferson'
+EXEC BuscarUsuarioPorEmail 'admin@admin.com'
 
 
 --Com Id
-CREATE PROCEDURE BuscarPorId @IDRECEBIDO INT
+CREATE PROCEDURE BuscarPorId @IdRecebido INT
 AS
-SELECT NOME, CPF FROM PESSOAS WHERE ID = @IDRECEBIDO
+SELECT IdUsuario, Nome, Email, Permissao FROM Usuarios WHERE IdUsuario = @IdRecebido;
 
 EXEC BuscarPorId 2
 
@@ -66,15 +65,11 @@ EXEC BuscarPorId 2
 --Deletar Procedure
 DROP PROCEDURE BuscarPorId
 
+----------------------------- VIEWS -----------------------------
 
---Alterando Stored Procedure
-ALTER PROCEDURE BuscarPorId
-@IDRECEBIDO INT
-AS
-BEGIN
-SELECT NOME FROM PESSOAS WHERE ID = @IDRECEBIDO
-END
+-- nao ha parametro de entrada e nem de saida
 
-EXEC BuscarPorId 2
-BuscarPorId 2 
-GO
+CREATE VIEW vwEventos AS 
+SELECT IdEvento, Titulo FROM Eventos
+
+SELECT * FROM vwEventos WHERE IdEvento = 1 
