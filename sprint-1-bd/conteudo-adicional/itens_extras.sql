@@ -24,6 +24,15 @@ SELECT * FROM ListarUsuarios();
 SELECT COUNT(*) FROM Categorias;
 SELECT COUNT(*) AS QtdCategorias FROM Categorias;
 
+SELECT LEN(NOME) AS QtdCaracteres, Nome
+FROM Categorias  
+WHERE IdCategoria = 1;
+
+------------------------------------------------------- SUBSTITUI O VALOR DA CADEIA DE CARACTERES ESPECIFICADO POR OUTRO VALOR
+SELECT REPLACE('O SENAI é Roxo','Roxo','Vermelho');
+
+------------------------------------------------------REMOVE OS CARACTERES DE ESPAÇO OU OUTROS CARACTERES ESPECIFICADOS DO INICIO OU FINAL
+SELECT TRIM('    Livro Vol. 1    ') AS Resultado;
 
 
 ----------------------------- STORED PROCEDURES -----------------------------
