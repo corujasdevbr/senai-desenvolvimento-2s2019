@@ -1,6 +1,8 @@
 Incluir uma imagem para cada usuário cadastrado;
 
 
+- Seleção - trazer todas as categorias, inclusive as que não possuem lançamentos vinculados.
+- Seleção - trazer todas as plataformas, inclusive as que não possuem lançamentos vinculados.
 
 -Atualizar o usuário Helena para administrador.
 -Deletar a série Deuses Americanos
