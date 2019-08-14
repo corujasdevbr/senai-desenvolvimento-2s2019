@@ -25,10 +25,4 @@
 
 - Criar uma view, que dado uma entrada do usuário, por exemplo, 3, mostrar os próximos 3 lançamentos breves. Mostrando também a categoria e a plataforma.
 
-- Criar um view que dado um categoria traga a quantidade de filmes que há nela.
-
-- Listar a quantidade de filmes que há em uma categoria em determinada plataforma.
-
-
-
 
