@@ -26,3 +26,5 @@
 - Criar uma view, que dado uma entrada do usuário, por exemplo, 3, mostrar os próximos 3 lançamentos breves. Mostrando também a categoria e a plataforma.
 
 
+
+
