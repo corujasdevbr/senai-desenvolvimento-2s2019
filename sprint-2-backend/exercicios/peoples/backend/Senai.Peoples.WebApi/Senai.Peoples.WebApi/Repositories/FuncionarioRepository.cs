@@ -50,5 +50,92 @@ namespace Senai.Peoples.WebApi.Repositories
             }
             return funcionarios;
         }
+
+
+        public FuncionarioDomain BuscarPorId(int id)
+        {
+            string QuerySelect = "SELECT IdFuncionario, Nome, Sobrenome FROM Funcionarios WHERE IdFuncionario = @IdFuncionario";
+
+            using (SqlConnection con = new SqlConnection(StringConexao))
+            {
+                con.Open();
+                SqlDataReader sdr;
+
+                using (SqlCommand cmd = new SqlCommand(QuerySelect, con))
+                {
+                    cmd.Parameters.AddWithValue("@IdFuncionario", id);
+                    sdr = cmd.ExecuteReader();
+
+
+                    if (sdr.HasRows)
+                    {
+                        while (sdr.Read())
+                        {
+                            FuncionarioDomain funcionario = new FuncionarioDomain
+                            {
+                                IdFuncionario = Convert.ToInt32(sdr["IdFuncionario"]),
+                                Nome = sdr["Nome"].ToString(),
+                                Sobrenome = sdr["Sobrenome"].ToString()
+                            };
+
+                            return funcionario;
+                        }
+                    }
+
+                    return null;
+                }
+            }
+        }
+
+
+        public void Cadastrar(FuncionarioDomain funcionarioDomain)
+        {
+            //Declara a conexão passando sua string de conexão
+            using (SqlConnection con = new SqlConnection(StringConexao))
+            {
+                // Declara a query passando o valor como parametro
+                string QueryASerExecutada = "INSERT INTO Funcionarios (Nome, Sobrenome) VALUES (@Nome, @Sobrenome)";
+                //Declara o command passando a query e a conexão
+                SqlCommand cmd = new SqlCommand(QueryASerExecutada, con);
+                //Passa o valor do parametro
+                cmd.Parameters.AddWithValue("@Nome", funcionarioDomain.Nome);
+                cmd.Parameters.AddWithValue("@Sobrenome", funcionarioDomain.Sobrenome
+);
+                //abre a conexão
+                con.Open();
+                //Executa o comando
+                cmd.ExecuteNonQuery();
+            }
+        }
+
+
+        public void Alterar(FuncionarioDomain funcionario)
+        {
+            using (SqlConnection con = new SqlConnection(StringConexao))
+            {
+                string Query = "UPDATE Funcionarios SET Nome = @Nome, Sobrenome = @Sobrenome WHERE IdFuncionario = @IdFuncionario";
+
+                SqlCommand cmd = new SqlCommand(Query, con);
+                cmd.Parameters.AddWithValue("@IdFuncionario", funcionario.IdFuncionario);
+                cmd.Parameters.AddWithValue("@Nome", funcionario.Nome);
+                cmd.Parameters.AddWithValue("@Sobrenome", funcionario.Sobrenome);
+                con.Open();
+                cmd.ExecuteNonQuery();
+            }
+        }
+
+        public void Deletar(int id)
+        {
+            string QueryDelete = "DELETE FROM Funcionarios WHERE IdFuncionario = @IdFuncionario;";
+            using (SqlConnection con = new SqlConnection(StringConexao))
+            {
+                using (SqlCommand cmd = new SqlCommand(QueryDelete, con))
+                {
+                    cmd.Parameters.AddWithValue("@IdFuncionario", id);
+                    con.Open();
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
     }
 }
