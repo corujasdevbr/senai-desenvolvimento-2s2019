@@ -1,0 +1,7 @@
+A empresa Moda contratou você para desenvolver a API para disponibilizar todos os seus itens de produção.
+Uma determinada camiseta pode pertencer somente a uma marca (ex.: Khelf), porém, pode ter vários tamanhos (ex.: P, M, G e GG).
+
+BD: a empresa disponibilizou o arquivo script_moda.sql - bd M_Moda/T_Tarde;
+BackEnd: criar um projeto chamado Senai.Moda.WebApi;
+Postman: disponibilizar todas as requisições solicitadas;
+Swagger: adicionar a documentação ao seu projeto;

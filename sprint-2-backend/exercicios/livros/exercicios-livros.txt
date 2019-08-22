@@ -17,6 +17,9 @@ POST /api/livros
 PUT /api/livros/{id}
 DELETE /api/livros/{id}
 
+Adicionar o Swagger ao Projeto.
+Salvar toda a coleção no postman.
+
 Desafios Extras:
 
 Apresentar a lista de livros de um determinado autor.
@@ -34,3 +37,8 @@ GET /api/autores/{id}/ativos/livros
 Apresentar a lista de autores cujo ano da data de nascimento seja superior a 1990.
 GET /api/autores/{ano}/nascimento
 
+
+Nome do Projeto: Senai.BookStore.WebApi
+Nome do Banco: M_BookStore/T_BookStore
+Scripts: Foi entregue pelo cliente (bookstore.sql).
+GitHub: 2s2019-sprint-2-backend-bookstore

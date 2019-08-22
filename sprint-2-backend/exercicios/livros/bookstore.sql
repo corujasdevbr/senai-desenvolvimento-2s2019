@@ -1,9 +1,9 @@
-CREATE DATABASE M_Livros;
+CREATE DATABASE M_BookStore;
 -- ou
-CREATE DATABASE T_Livros;
+CREATE DATABASE T_BookStore;
 
-USE M_Livros;
-USE T_Livros;
+USE M_BookStore;
+USE T_BookStore;
 
 CREATE TABLE Generos
 (
