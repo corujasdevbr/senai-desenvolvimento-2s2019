@@ -5,6 +5,7 @@ A fim de melhorar a integração entre os sistemas, ela solicitou que você criasse
 
 -- autores
 GET /api/autores
+POST /api/autores
 
 --generos
 GET /api/generos
@@ -34,7 +35,7 @@ GET /api/autores/ativos
 Apresentar a lista de livros de um determinado autor que esteja ativo no sistema.
 GET /api/autores/{id}/ativos/livros
 
-Apresentar a lista de autores cujo ano da data de nascimento seja superior a 1990.
+Apresentar a lista de autores cujo ano da data de nascimento seja superior a data de entrada do usuário.
 GET /api/autores/{ano}/nascimento
 
 
