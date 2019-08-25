@@ -42,7 +42,7 @@ CREATE TABLE Presencas
 
 USE Gufos;
 
--- inserir na tabela de usu�rios
+-- inserir na tabela de usuarios
 INSERT INTO Usuarios (Nome, Email, Senha, Permissao) VALUES ('Administrador', 'admin@admin.com', '123456', 'ADMINISTRADOR');
 
 INSERT INTO Usuarios (Nome, Email, Senha, Permissao) VALUES ('A', 'a@aluno.com', '123456', 'ALUNO'), ('B', 'b@aluno.com', '123456', 'ALUNO');
@@ -54,7 +54,7 @@ INSERT INTO Categorias VALUES ('Jogos'), ('Meetup'), ('Futebol');
 INSERT INTO Eventos (Titulo, Descricao, DataEvento, Ativo, Localizacao, IdCategoria) VALUES ('Titulo A', 'Descricao A', GETDATE(), 1, 'Alameda Barao de Limeira, 539', 1);
 INSERT INTO Eventos (Titulo, Descricao, DataEvento, Ativo, Localizacao, IdCategoria) VALUES ('Titulo B', 'Campeonato de Futebol', GETDATE(), 1, 'Alameda Barao de Limeira, 539', 3);
 
--- inserir na tabela de presen�as
+-- inserir na tabela de presencas
 INSERT INTO Presencas (IdUsuario, IdEvento) VALUES (2, 1), (2, 2), (3, 1);
 
 -- Colocando o banco de dados em uso
@@ -69,7 +69,7 @@ SELECT * FROM Presencas;
 -- Selecionando os eventos e suas respectivas categorias
 SELECT E.*, C.* FROM Eventos E INNER JOIN Categorias C ON E.IdCategoria = C.IdCategoria;
 
--- Selecionando os usu�rios, os eventos e as presen�as
+-- Selecionando os usuarios, os eventos e as presencas
 SELECT P.*, U.*, E.* FROM Presencas P INNER JOIN Usuarios U ON P.IdUsuario = U.IdUsuario INNER JOIN Eventos E ON P.IdEvento = E.IdEvento;
 
 -- Selecionando as presencas, os usuarios, quais eventos eles irao participar e quais as respectivas categorias
