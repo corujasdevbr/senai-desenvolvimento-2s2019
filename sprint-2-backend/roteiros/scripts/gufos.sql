@@ -42,7 +42,7 @@ CREATE TABLE Presencas
 
 USE Gufos;
 
--- inserir na tabela de usuários
+-- inserir na tabela de usuï¿½rios
 INSERT INTO Usuarios (Nome, Email, Senha, Permissao) VALUES ('Administrador', 'admin@admin.com', '123456', 'ADMINISTRADOR');
 
 INSERT INTO Usuarios (Nome, Email, Senha, Permissao) VALUES ('A', 'a@aluno.com', '123456', 'ALUNO'), ('B', 'b@aluno.com', '123456', 'ALUNO');
@@ -51,10 +51,10 @@ INSERT INTO Usuarios (Nome, Email, Senha, Permissao) VALUES ('A', 'a@aluno.com',
 INSERT INTO Categorias VALUES ('Jogos'), ('Meetup'), ('Futebol');
 
 -- inserir na tabela de eventos
-INSERT INTO Eventos (Titulo, Descricao, DataEvento, Ativo, Localizacao, IdCategoria) VALUES ('Titulo A', 'Descricao A', GETDATE(), 1, 'Alameda Barão de Limeira, 539', 1);
-INSERT INTO Eventos (Titulo, Descricao, DataEvento, Ativo, Localizacao, IdCategoria) VALUES ('Titulo B', 'Campeonato de Futebol', GETDATE(), 1, 'Alameda Barão de Limeira, 539', 3);
+INSERT INTO Eventos (Titulo, Descricao, DataEvento, Ativo, Localizacao, IdCategoria) VALUES ('Titulo A', 'Descricao A', GETDATE(), 1, 'Alameda Barao de Limeira, 539', 1);
+INSERT INTO Eventos (Titulo, Descricao, DataEvento, Ativo, Localizacao, IdCategoria) VALUES ('Titulo B', 'Campeonato de Futebol', GETDATE(), 1, 'Alameda Barao de Limeira, 539', 3);
 
--- inserir na tabela de presenças
+-- inserir na tabela de presenï¿½as
 INSERT INTO Presencas (IdUsuario, IdEvento) VALUES (2, 1), (2, 2), (3, 1);
 
 -- Colocando o banco de dados em uso
@@ -69,7 +69,7 @@ SELECT * FROM Presencas;
 -- Selecionando os eventos e suas respectivas categorias
 SELECT E.*, C.* FROM Eventos E INNER JOIN Categorias C ON E.IdCategoria = C.IdCategoria;
 
--- Selecionando os usuários, os eventos e as presenças
+-- Selecionando os usuï¿½rios, os eventos e as presenï¿½as
 SELECT P.*, U.*, E.* FROM Presencas P INNER JOIN Usuarios U ON P.IdUsuario = U.IdUsuario INNER JOIN Eventos E ON P.IdEvento = E.IdEvento;
 
 -- Selecionando as presencas, os usuarios, quais eventos eles irao participar e quais as respectivas categorias
