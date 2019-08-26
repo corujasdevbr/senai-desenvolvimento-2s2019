@@ -1,0 +1,31 @@
+CREATE DATABASE Ekips;
+
+USE Ekips;
+
+CREATE TABLE Departamentos(
+	IdDepartamento INT PRIMARY KEY IDENTITY
+	, Nome VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE Cargos(
+	IdCargo INT PRIMARY KEY IDENTITY
+	, Nome VARCHAR(255) NOT NULL
+	, Ativo BIT
+);
+
+CREATE TABLE Funcionarios(
+	IdFuncionario INT PRIMARY KEY IDENTITY
+	, Nome VARCHAR(255) NOT NULL
+	, CPF VARCHAR(255)
+	, DataNascimento DATE
+	, Salario FLOAT(2)
+	, IdDepartamento INT FOREIGN KEY REFERENCES Departamentos(IdDepartamento)
+	, IdCargo INT FOREIGN KEY REFERENCES Cargos(IdCargo)
+);
+
+CREATE TABLE Usuarios(
+	IdUsuario INT PRIMARY KEY IDENTITY
+	, Email VARCHAR(255) NOT NULL
+	, Senha VARCHAR(50) NOT NULL
+	, Permissão VARCHAR(20)
+);
