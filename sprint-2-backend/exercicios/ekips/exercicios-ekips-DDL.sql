@@ -4,19 +4,19 @@ USE Ekips;
 
 CREATE TABLE Departamentos(
 	IdDepartamento INT PRIMARY KEY IDENTITY
-	, Nome VARCHAR(255) NOT NULL
+	, Nome VARCHAR(255) NOT NULL UNIQUE
 );
 
 CREATE TABLE Cargos(
 	IdCargo INT PRIMARY KEY IDENTITY
-	, Nome VARCHAR(255) NOT NULL
+	, Nome VARCHAR(255) NOT NULL UNIQUE
 	, Ativo BIT
 );
 
 CREATE TABLE Funcionarios(
 	IdFuncionario INT PRIMARY KEY IDENTITY
 	, Nome VARCHAR(255) NOT NULL
-	, CPF VARCHAR(255)
+	, CPF VARCHAR(255) UNIQUE
 	, DataNascimento DATE
 	, Salario FLOAT(2)
 	, IdDepartamento INT FOREIGN KEY REFERENCES Departamentos(IdDepartamento)
@@ -25,7 +25,7 @@ CREATE TABLE Funcionarios(
 
 CREATE TABLE Usuarios(
 	IdUsuario INT PRIMARY KEY IDENTITY
-	, Email VARCHAR(255) NOT NULL
+	, Email VARCHAR(255) NOT NULL UNIQUE
 	, Senha VARCHAR(50) NOT NULL
-	, Permissão VARCHAR(20)
+	, Permissão VARCHAR(20) NOT NULL
 );
