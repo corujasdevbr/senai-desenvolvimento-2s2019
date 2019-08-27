@@ -117,5 +117,13 @@ namespace Senai.Optus.WebApi.Controllers
             }
         }
 
+        [HttpGet("quantidade")]
+        public IActionResult QuantidadeEstilos()
+        {
+            return Ok(new { quantidadeEstilos = EstiloRepository.QuantidadeEstilos() });
+        }
+
+
+
     }
 }

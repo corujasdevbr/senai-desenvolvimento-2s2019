@@ -70,5 +70,13 @@ namespace Senai.Optus.WebApi.Repositories
                 return ctx.Estilos.Include(x => x.Artistas).FirstOrDefault(x => x.Nome == nome);
             }
         }
+
+        public int QuantidadeEstilos()
+        {
+            using (OptusContext ctx = new OptusContext())
+            {
+                return ctx.Estilos.Count();
+            }
+        }
     }
 }
