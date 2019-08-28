@@ -19,7 +19,6 @@ namespace Senai.Ekips.WebApi.Repositories
                     return null;
                 return usuarioBuscado;
             }
-
         }
     }
 

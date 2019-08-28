@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Senai.Ekips.WebApi.Domains;
 using Senai.Ekips.WebApi.Repositories;
 
 namespace Senai.Ekips.WebApi.Controllers
@@ -29,6 +30,53 @@ namespace Senai.Ekips.WebApi.Controllers
                 return Ok(FuncionarioRepository.BuscarFuncionarioPorUsuario(Convert.ToInt32(HttpContext.User.Claims.First(c => c.Type == JwtRegisteredClaimNames.Jti).Value)));
             else
                 return Forbid();
+        }
+
+        [Authorize(Roles = "ADMINISTRADOR")]
+        public IActionResult Cadastrar(Funcionarios funcionario)
+        {
+            try
+            {
+                FuncionarioRepository.Cadastrar(funcionario);
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { mensagem = ex.Message });
+            }
+        }
+
+        [HttpPut("{id}")]
+        public IActionResult Atualizar(int id, Funcionarios funcionario)
+        {
+            try
+            {
+                if (FuncionarioRepository.BuscarPorId(id) == null)
+                    return NotFound();
+                funcionario.FuncionarioId = id;
+                FuncionarioRepository.Atualizar(funcionario);
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { mensagem = ex.Message });
+            }
+        }
+
+        [HttpDelete("{id}")]
+        public IActionResult Deletar(int id)
+        {
+            try
+            {
+                if (FuncionarioRepository.BuscarPorId(id) == null)
+                    return NotFound();
+                FuncionarioRepository.Deletar(id);
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { mensagem = ex.Message });
+            }
         }
     }
 }
