@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\erikv\\source\\repos\\Senai.BookStore.WebApi\\Senai.BookStore.WebApi.csproj": {}
+    "C:\\Git\\senai-dev-2s2019\\sprint-2-backend\\exercicios\\livros\\Senai.BookStore.WebApi\\Senai.BookStore.WebApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\erikv\\source\\repos\\Senai.BookStore.WebApi\\Senai.BookStore.WebApi.csproj": {
+    "C:\\Git\\senai-dev-2s2019\\sprint-2-backend\\exercicios\\livros\\Senai.BookStore.WebApi\\Senai.BookStore.WebApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\erikv\\source\\repos\\Senai.BookStore.WebApi\\Senai.BookStore.WebApi.csproj",
+        "projectUniqueName": "C:\\Git\\senai-dev-2s2019\\sprint-2-backend\\exercicios\\livros\\Senai.BookStore.WebApi\\Senai.BookStore.WebApi.csproj",
         "projectName": "Senai.BookStore.WebApi",
-        "projectPath": "C:\\Users\\erikv\\source\\repos\\Senai.BookStore.WebApi\\Senai.BookStore.WebApi.csproj",
+        "projectPath": "C:\\Git\\senai-dev-2s2019\\sprint-2-backend\\exercicios\\livros\\Senai.BookStore.WebApi\\Senai.BookStore.WebApi.csproj",
         "packagesPath": "C:\\Users\\erikv\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\erikv\\source\\repos\\Senai.BookStore.WebApi\\obj\\",
+        "outputPath": "C:\\Git\\senai-dev-2s2019\\sprint-2-backend\\exercicios\\livros\\Senai.BookStore.WebApi\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
