@@ -55,3 +55,5 @@ GET /api/fornecedores/{id}/pecas
 Disponibilizar um endpoint para listar todos os usuários (mas não mostrar a senha. Somente email.). Somente administradores poderão visualizar.
 GET /api/usuarios
 
+Disponibilizar um endpoint para que ao enviar a quantidade de itens e o id da peça, seja calculado o valor total e este valor seja retornado.
+POST /api/pecas/calcular
