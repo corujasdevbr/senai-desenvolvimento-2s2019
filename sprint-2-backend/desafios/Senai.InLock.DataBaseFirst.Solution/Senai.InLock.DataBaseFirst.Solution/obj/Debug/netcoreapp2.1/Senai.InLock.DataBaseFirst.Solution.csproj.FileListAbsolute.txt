@@ -25,3 +25,17 @@ C:\_github\senai-dev-1s2019\svigufo\2.api-backend\inlock\Senai.InLock.DataBaseFi
 C:\_github\senai-dev-1s2019\svigufo\2.api-backend\inlock\Senai.InLock.DataBaseFirst.Solution\Senai.InLock.DataBaseFirst.Solution\obj\Debug\netcoreapp2.1\Senai.InLock.DataBaseFirst.Solution.RazorTargetAssemblyInfo.cache
 C:\_github\senai-dev-1s2019\svigufo\2.api-backend\inlock\Senai.InLock.DataBaseFirst.Solution\Senai.InLock.DataBaseFirst.Solution\obj\Debug\netcoreapp2.1\Senai.InLock.DataBaseFirst.Solution.dll
 C:\_github\senai-dev-1s2019\svigufo\2.api-backend\inlock\Senai.InLock.DataBaseFirst.Solution\Senai.InLock.DataBaseFirst.Solution\obj\Debug\netcoreapp2.1\Senai.InLock.DataBaseFirst.Solution.pdb
+C:\Git\senai-dev-2s2019\sprint-2-backend\desafios\Senai.InLock.DataBaseFirst.Solution\Senai.InLock.DataBaseFirst.Solution\bin\Debug\netcoreapp2.1\Senai.InLock.DataBaseFirst.Solution.deps.json
+C:\Git\senai-dev-2s2019\sprint-2-backend\desafios\Senai.InLock.DataBaseFirst.Solution\Senai.InLock.DataBaseFirst.Solution\bin\Debug\netcoreapp2.1\Senai.InLock.DataBaseFirst.Solution.runtimeconfig.json
+C:\Git\senai-dev-2s2019\sprint-2-backend\desafios\Senai.InLock.DataBaseFirst.Solution\Senai.InLock.DataBaseFirst.Solution\bin\Debug\netcoreapp2.1\Senai.InLock.DataBaseFirst.Solution.runtimeconfig.dev.json
+C:\Git\senai-dev-2s2019\sprint-2-backend\desafios\Senai.InLock.DataBaseFirst.Solution\Senai.InLock.DataBaseFirst.Solution\bin\Debug\netcoreapp2.1\Senai.InLock.DataBaseFirst.Solution.dll
+C:\Git\senai-dev-2s2019\sprint-2-backend\desafios\Senai.InLock.DataBaseFirst.Solution\Senai.InLock.DataBaseFirst.Solution\bin\Debug\netcoreapp2.1\Senai.InLock.DataBaseFirst.Solution.pdb
+C:\Git\senai-dev-2s2019\sprint-2-backend\desafios\Senai.InLock.DataBaseFirst.Solution\Senai.InLock.DataBaseFirst.Solution\obj\Debug\netcoreapp2.1\Senai.InLock.DataBaseFirst.Solution.csprojAssemblyReference.cache
+C:\Git\senai-dev-2s2019\sprint-2-backend\desafios\Senai.InLock.DataBaseFirst.Solution\Senai.InLock.DataBaseFirst.Solution\obj\Debug\netcoreapp2.1\Senai.InLock.DataBaseFirst.Solution.csproj.CoreCompileInputs.cache
+C:\Git\senai-dev-2s2019\sprint-2-backend\desafios\Senai.InLock.DataBaseFirst.Solution\Senai.InLock.DataBaseFirst.Solution\obj\Debug\netcoreapp2.1\Senai.InLock.DataBaseFirst.Solution.RazorAssemblyInfo.cache
+C:\Git\senai-dev-2s2019\sprint-2-backend\desafios\Senai.InLock.DataBaseFirst.Solution\Senai.InLock.DataBaseFirst.Solution\obj\Debug\netcoreapp2.1\Senai.InLock.DataBaseFirst.Solution.RazorAssemblyInfo.cs
+C:\Git\senai-dev-2s2019\sprint-2-backend\desafios\Senai.InLock.DataBaseFirst.Solution\Senai.InLock.DataBaseFirst.Solution\obj\Debug\netcoreapp2.1\Senai.InLock.DataBaseFirst.Solution.AssemblyInfoInputs.cache
+C:\Git\senai-dev-2s2019\sprint-2-backend\desafios\Senai.InLock.DataBaseFirst.Solution\Senai.InLock.DataBaseFirst.Solution\obj\Debug\netcoreapp2.1\Senai.InLock.DataBaseFirst.Solution.AssemblyInfo.cs
+C:\Git\senai-dev-2s2019\sprint-2-backend\desafios\Senai.InLock.DataBaseFirst.Solution\Senai.InLock.DataBaseFirst.Solution\obj\Debug\netcoreapp2.1\Senai.InLock.DataBaseFirst.Solution.RazorTargetAssemblyInfo.cache
+C:\Git\senai-dev-2s2019\sprint-2-backend\desafios\Senai.InLock.DataBaseFirst.Solution\Senai.InLock.DataBaseFirst.Solution\obj\Debug\netcoreapp2.1\Senai.InLock.DataBaseFirst.Solution.dll
+C:\Git\senai-dev-2s2019\sprint-2-backend\desafios\Senai.InLock.DataBaseFirst.Solution\Senai.InLock.DataBaseFirst.Solution\obj\Debug\netcoreapp2.1\Senai.InLock.DataBaseFirst.Solution.pdb

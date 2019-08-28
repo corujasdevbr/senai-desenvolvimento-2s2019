@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 
-namespace Senai.InLock.DataBaseFirst.Solution
+namespace Senai.BookStore.WebApi
 {
     public class Program
     {
@@ -19,8 +19,6 @@ namespace Senai.InLock.DataBaseFirst.Solution
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
-        .UseKestrel()
                 .UseStartup<Startup>();
-		//.UseIISIntegration();
     }
 }
