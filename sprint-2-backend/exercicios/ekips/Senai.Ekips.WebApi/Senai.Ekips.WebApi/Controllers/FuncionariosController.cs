@@ -55,7 +55,17 @@ namespace Senai.Ekips.WebApi.Controllers
         [HttpGet("{coluna}/{ordem}")]
         public IActionResult FuncionariosPorItemEOrdem(string coluna, string ordem)
         {
-            return Ok(FuncionarioRepository.BuscarPorItemEOrdem(coluna, ordem));
+            try
+            {
+                if (ordem.ToUpper() != "ASC" && ordem.ToUpper() != "DESC")
+                    return BadRequest();
+                return Ok(FuncionarioRepository.BuscarPorItemEOrdem(coluna, ordem));
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { mensagem = ex.Message });
+            }
+            
         }
 
         [Authorize(Roles = "ADMINISTRADOR")]

@@ -81,7 +81,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGVtYWlsLmNvbSIsImp0aSI6IjEiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBRE1JTklTVFJBRE9SIiwiZXhwIjoxNTY5NTg2MjQ0LCJpc3MiOiJFa2lwcy5XZWJBcGkiLCJhdWQiOiJFa2lwcy5XZWJBcGkifQ.VGR_xEQWhtv7LINzZvkLSBqzojWSZuLCl_JUu7y-emE",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGVtYWlsLmNvbSIsImp0aSI6IjEiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBRE1JTklTVFJBRE9SIiwiZXhwIjoxNTY5NjA0MDc2LCJpc3MiOiJFa2lwcy5XZWJBcGkiLCJhdWQiOiJFa2lwcy5XZWJBcGkifQ.BBYgaryDEg8ZeIokZsNywtN4YRcRL-wHcETY5R6FFls",
 									"type": "string"
 								}
 							]
@@ -118,7 +118,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "localhost:5000/api/funcionarios/Salario/DESC",
+							"raw": "localhost:5000/api/funcionarios/Nome/ASC",
 							"host": [
 								"localhost"
 							],
@@ -126,8 +126,8 @@
 							"path": [
 								"api",
 								"funcionarios",
-								"Salario",
-								"DESC"
+								"Nome",
+								"ASC"
 							]
 						}
 					},
@@ -218,7 +218,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": " {\r\n    \"nome\": \"Usuario A\",\r\n    \"cpf\": \"12345678920\",\r\n    \"dataNascimento\": \"1993-03-18T00:00:00\",\r\n    \"salario\": 15000.0000,\r\n    \"departamentoId\": 3,\r\n    \"cargoId\": 1,\r\n    \"usuario\" : {\r\n    \t\"email\" : \"a@email.com\",\r\n    \t\"senha\" : \"123456\",\r\n    \t\"permissao\" : \"COMUM\"\r\n    }\r\n}"
+							"raw": " {\r\n    \"nome\": \"Usuario A\",\r\n    \"cpf\": \"12345678950\",\r\n    \"dataNascimento\": \"1993-03-18T00:00:00\",\r\n    \"salario\": 15000.0000,\r\n    \"departamentoId\": 3,\r\n    \"cargoId\": 1,\r\n    \"usuario\" : {\r\n    \t\"email\" : \"a@email.com\",\r\n    \t\"senha\" : \"123456\",\r\n    \t\"permissao\" : \"COMUM\"\r\n    }\r\n}"
 						},
 						"url": {
 							"raw": "localhost:5000/api/funcionarios",
