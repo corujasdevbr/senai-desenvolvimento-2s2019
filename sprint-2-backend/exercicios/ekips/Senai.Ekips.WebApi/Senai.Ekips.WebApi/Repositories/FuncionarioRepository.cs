@@ -76,8 +76,8 @@ namespace Senai.Ekips.WebApi.Repositories
                 var ColunaSelecionada = new SqlParameter("@ColunaSelecionada", coluna);
 
                 if (ordem == "ASC")
-                    return ctx.Funcionarios.OrderBy(x => "x." + coluna).ToList();
-                // return ctx.Funcionarios.FromSql("SELECT * FROM Funcionarios ORDER BY @ColunaSelecionada ASC", coluna).ToList();
+                    // return ctx.Funcionarios.OrderBy(x => "x." + coluna).ToList();
+                    return ctx.Funcionarios.FromSql("SELECT * FROM Funcionarios ORDER BY @ColunaSelecionada ASC", ColunaSelecionada).ToList();
                 else
                     return ctx.Funcionarios.FromSql("SELECT * FROM Funcionarios ORDER BY @ColunaSelecionada DESC", coluna).ToList();
             }
