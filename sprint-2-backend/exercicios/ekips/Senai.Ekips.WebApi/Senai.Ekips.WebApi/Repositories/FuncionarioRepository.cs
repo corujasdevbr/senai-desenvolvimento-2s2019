@@ -2,6 +2,7 @@
 using Senai.Ekips.WebApi.Domains;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -72,10 +73,13 @@ namespace Senai.Ekips.WebApi.Repositories
         {
             using (EkipsContext ctx = new EkipsContext())
             {
+                var ColunaSelecionada = new SqlParameter("@ColunaSelecionada", coluna);
+
                 if (ordem == "ASC")
-                    return ctx.Funcionarios.OrderBy(x => coluna).ToList();
+                    return ctx.Funcionarios.OrderBy(x => "x." + coluna).ToList();
+                // return ctx.Funcionarios.FromSql("SELECT * FROM Funcionarios ORDER BY @ColunaSelecionada ASC", coluna).ToList();
                 else
-                    return ctx.Funcionarios.OrderByDescending(x => coluna).ToList();
+                    return ctx.Funcionarios.FromSql("SELECT * FROM Funcionarios ORDER BY @ColunaSelecionada DESC", coluna).ToList();
             }
         }
 

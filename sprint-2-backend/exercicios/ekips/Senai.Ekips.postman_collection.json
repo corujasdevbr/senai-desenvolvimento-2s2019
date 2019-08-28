@@ -103,6 +103,98 @@
 					"response": []
 				},
 				{
+					"name": "Funcionarios.Listar.Item.Ordem",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGVtYWlsLmNvbSIsImp0aSI6IjEiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBRE1JTklTVFJBRE9SIiwiZXhwIjoxNTY5NTg2MjQ0LCJpc3MiOiJFa2lwcy5XZWJBcGkiLCJhdWQiOiJFa2lwcy5XZWJBcGkifQ.VGR_xEQWhtv7LINzZvkLSBqzojWSZuLCl_JUu7y-emE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/api/funcionarios/Salario/DESC",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"funcionarios",
+								"Salario",
+								"DESC"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Funcionarios.Listar.Dados",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGVtYWlsLmNvbSIsImp0aSI6IjEiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBRE1JTklTVFJBRE9SIiwiZXhwIjoxNTY5NTg2MjQ0LCJpc3MiOiJFa2lwcy5XZWJBcGkiLCJhdWQiOiJFa2lwcy5XZWJBcGkifQ.VGR_xEQWhtv7LINzZvkLSBqzojWSZuLCl_JUu7y-emE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/api/funcionarios/dados",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"funcionarios",
+								"dados"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Funcionarios.BuscarPorSalario",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGVtYWlsLmNvbSIsImp0aSI6IjEiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBRE1JTklTVFJBRE9SIiwiZXhwIjoxNTY5NTg2MjQ0LCJpc3MiOiJFa2lwcy5XZWJBcGkiLCJhdWQiOiJFa2lwcy5XZWJBcGkifQ.VGR_xEQWhtv7LINzZvkLSBqzojWSZuLCl_JUu7y-emE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/api/funcionarios/9500/salarios",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"funcionarios",
+								"9500",
+								"salarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "Funcionarios.Cadastrar",
 					"request": {
 						"auth": {
@@ -248,6 +340,36 @@
 					"response": []
 				},
 				{
+					"name": "Cargos.Listar.Ativos",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGVtYWlsLmNvbSIsImp0aSI6IjEiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBRE1JTklTVFJBRE9SIiwiZXhwIjoxNTY5NTg5MTkyLCJpc3MiOiJFa2lwcy5XZWJBcGkiLCJhdWQiOiJFa2lwcy5XZWJBcGkifQ.h0m_mnoSS7ykzp5FEEt7yislK7HimlVZrx4tuJJMxqk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/api/cargos/ativos",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"cargos",
+								"ativos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "Cargos.BuscarPorId",
 					"request": {
 						"auth": {
@@ -272,6 +394,69 @@
 								"api",
 								"cargos",
 								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cargos.BuscarPorId.Funcionarios",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGVtYWlsLmNvbSIsImp0aSI6IjEiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBRE1JTklTVFJBRE9SIiwiZXhwIjoxNTY5NTg5MTkyLCJpc3MiOiJFa2lwcy5XZWJBcGkiLCJhdWQiOiJFa2lwcy5XZWJBcGkifQ.h0m_mnoSS7ykzp5FEEt7yislK7HimlVZrx4tuJJMxqk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/api/cargos/3/funcionarios",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"cargos",
+								"3",
+								"funcionarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cargos.BuscarPorNome.Funcionarios Copy",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGVtYWlsLmNvbSIsImp0aSI6IjEiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBRE1JTklTVFJBRE9SIiwiZXhwIjoxNTY5NTg5MTkyLCJpc3MiOiJFa2lwcy5XZWJBcGkiLCJhdWQiOiJFa2lwcy5XZWJBcGkifQ.h0m_mnoSS7ykzp5FEEt7yislK7HimlVZrx4tuJJMxqk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/api/cargos/buscar/Desenvolvedor/funcionarios",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"cargos",
+								"buscar",
+								"Desenvolvedor",
+								"funcionarios"
 							]
 						}
 					},
@@ -417,6 +602,37 @@
 								"api",
 								"departamentos",
 								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Departamentos.BuscarPorId.Funcionarios",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGVtYWlsLmNvbSIsImp0aSI6IjEiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBRE1JTklTVFJBRE9SIiwiZXhwIjoxNTY5NTg2MjQ0LCJpc3MiOiJFa2lwcy5XZWJBcGkiLCJhdWQiOiJFa2lwcy5XZWJBcGkifQ.VGR_xEQWhtv7LINzZvkLSBqzojWSZuLCl_JUu7y-emE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/api/departamentos/2/funcionarios",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"departamentos",
+								"2",
+								"funcionarios"
 							]
 						}
 					},
