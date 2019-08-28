@@ -1,4 +1,5 @@
-﻿using Senai.Ekips.WebApi.Domains;
+﻿using Microsoft.EntityFrameworkCore;
+using Senai.Ekips.WebApi.Domains;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,6 +16,15 @@ namespace Senai.Ekips.WebApi.Repositories
                 return ctx.Funcionarios.ToList();
             }
         }
+
+        public List<Funcionarios> ListarComDados()
+        {
+            using (EkipsContext ctx = new EkipsContext())
+            {
+                return ctx.Funcionarios.Include(x => x.Cargo).Include(x => x.Departamento).ToList();
+            }
+        }
+
 
         public Funcionarios BuscarPorId(int id)
         {
@@ -55,6 +65,25 @@ namespace Senai.Ekips.WebApi.Repositories
                 funcionarioBuscado.CargoId = funcionario.CargoId;
                 ctx.Funcionarios.Update(funcionarioBuscado);
                 ctx.SaveChanges();
+            }
+        }
+
+        public List<Funcionarios> BuscarPorItemEOrdem(string coluna, string ordem)
+        {
+            using (EkipsContext ctx = new EkipsContext())
+            {
+                if (ordem == "ASC")
+                    return ctx.Funcionarios.OrderBy(x => coluna).ToList();
+                else
+                    return ctx.Funcionarios.OrderByDescending(x => coluna).ToList();
+            }
+        }
+
+        public List<Funcionarios> BuscarFuncionariosPorSalario(decimal salario)
+        {
+            using (EkipsContext ctx = new EkipsContext())
+            {
+                return ctx.Funcionarios.Where(x => x.Salario >= salario).ToList();
             }
         }
 

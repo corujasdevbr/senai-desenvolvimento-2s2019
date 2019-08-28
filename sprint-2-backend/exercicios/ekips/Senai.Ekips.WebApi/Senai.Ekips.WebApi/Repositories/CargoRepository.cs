@@ -1,4 +1,5 @@
-﻿using Senai.Ekips.WebApi.Domains;
+﻿using Microsoft.EntityFrameworkCore;
+using Senai.Ekips.WebApi.Domains;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,6 +14,14 @@ namespace Senai.Ekips.WebApi.Repositories
             using (EkipsContext ctx = new EkipsContext())
             {
                 return ctx.Cargos.ToList();
+            }
+        }
+
+        public Cargos ListarCargoComFuncionarios(int id)
+        {
+            using (EkipsContext ctx = new EkipsContext())
+            {
+                return ctx.Cargos.Include(x => x.Funcionarios).FirstOrDefault(x => x.CargoId == id);
             }
         }
 
@@ -42,6 +51,22 @@ namespace Senai.Ekips.WebApi.Repositories
                 cargoBuscado.Ativo = cargo.Ativo;
                 ctx.Cargos.Update(cargoBuscado);
                 ctx.SaveChanges();
+            }
+        }
+
+        public Cargos ListarFuncionariosDoCargoPorNome(string nome)
+        {
+            using (EkipsContext ctx = new EkipsContext())
+            {
+                return ctx.Cargos.Include(x => x.Funcionarios).FirstOrDefault(x => x.Nome == nome);
+            }
+        }
+
+        public List<Cargos> ListarCargosAtivos()
+        {
+            using (EkipsContext ctx = new EkipsContext())
+            {
+                return ctx.Cargos.Where(x => x.Ativo == true).ToList();
             }
         }
 

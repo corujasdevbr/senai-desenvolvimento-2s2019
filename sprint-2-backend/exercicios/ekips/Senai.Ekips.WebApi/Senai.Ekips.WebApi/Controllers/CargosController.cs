@@ -32,6 +32,54 @@ namespace Senai.Ekips.WebApi.Controllers
             }
         }
 
+        [Authorize(Roles = "ADMINISTRADOR")]
+        [HttpGet("{id}/funcionarios")]
+        public IActionResult ListarFuncionariosDoCargo(int id)
+        {
+            try
+            {
+                Cargos cargo = CargoRepository.ListarCargoComFuncionarios(id);
+                if (cargo == null)
+                    return NotFound();
+                return Ok(cargo);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { mensagem = ex.Message });
+            }
+        }
+
+        [Authorize(Roles = "ADMINISTRADOR")]
+        [HttpGet("buscar/{nome}/funcionarios")]
+        public IActionResult ListarFuncionariosDoCargoPorNome(string nome)
+        {
+            try
+            {
+                Cargos cargo = CargoRepository.ListarFuncionariosDoCargoPorNome(nome);
+                if (cargo == null)
+                    return NotFound();
+                return Ok(cargo);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { mensagem = ex.Message });
+            }
+        }
+
+        [Authorize(Roles = "ADMINISTRADOR")]
+        [HttpGet("ativos")]
+        public IActionResult ListarCargosAtivos()
+        {
+            try
+            {
+                return Ok(CargoRepository.ListarCargosAtivos());
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { mensagem = ex.Message });
+            }
+        }
+
         [HttpGet("{id}")]
         public IActionResult BuscarPorId(int id)
         {

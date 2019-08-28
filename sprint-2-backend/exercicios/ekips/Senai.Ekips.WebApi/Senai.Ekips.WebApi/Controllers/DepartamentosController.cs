@@ -23,13 +23,30 @@ namespace Senai.Ekips.WebApi.Controllers
         {
             return Ok(DepartamentoRepository.Listar());
         }
-
+        
         [HttpGet("{id}")]
         public IActionResult BuscarPorId(int id)
         {
             try
             {
                 Departamentos departamento = DepartamentoRepository.BuscarPorId(id);
+                if (departamento == null)
+                    return NotFound();
+                return Ok(departamento);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { mensagem = ex.Message });
+            }
+        }
+
+        [Authorize(Roles = "ADMINISTRADOR")]
+        [HttpGet("{id}/funcionarios")]
+        public IActionResult ListarFuncionariosDoDepartamento(int id)
+        {
+            try
+            {
+                Departamentos departamento = DepartamentoRepository.ListarFuncionariosDoDepartamento(id);
                 if (departamento == null)
                     return NotFound();
                 return Ok(departamento);

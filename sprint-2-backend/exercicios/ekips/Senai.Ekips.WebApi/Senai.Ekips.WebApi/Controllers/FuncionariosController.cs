@@ -23,6 +23,10 @@ namespace Senai.Ekips.WebApi.Controllers
         [HttpGet]
         public IActionResult Listar()
         {
+
+            var identity = HttpContext.User.Identity as ClaimsIdentity;
+            identity.Claims.First();
+
             string permissao = HttpContext.User.Claims.First(x => x.Type == ClaimTypes.Role).Value;
             if (permissao == "ADMINISTRADOR")
                 return Ok(FuncionarioRepository.Listar());
@@ -30,6 +34,28 @@ namespace Senai.Ekips.WebApi.Controllers
                 return Ok(FuncionarioRepository.BuscarFuncionarioPorUsuario(Convert.ToInt32(HttpContext.User.Claims.First(c => c.Type == JwtRegisteredClaimNames.Jti).Value)));
             else
                 return Forbid();
+        }
+
+        [Authorize(Roles = "ADMINISTRADOR")]
+        [HttpGet("dados")]
+        public IActionResult ListarDados()
+        {
+            return Ok(FuncionarioRepository.ListarComDados());
+        }
+
+        [Authorize(Roles = "ADMINISTRADOR")]
+        [HttpGet("{salario}/salarios")]
+        public IActionResult BuscarFuncionariosPorSalario(decimal salario)
+        {
+
+            return Ok(FuncionarioRepository.BuscarFuncionariosPorSalario(salario));
+        }
+
+        [Authorize(Roles = "ADMINISTRADOR")]
+        [HttpGet("{coluna}/{ordem}")]
+        public IActionResult FuncionariosPorItemEOrdem(string coluna, string ordem)
+        {
+            return Ok(FuncionarioRepository.BuscarPorItemEOrdem(coluna, ordem));
         }
 
         [Authorize(Roles = "ADMINISTRADOR")]
