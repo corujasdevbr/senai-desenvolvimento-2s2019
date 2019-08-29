@@ -12,6 +12,5 @@ namespace Senai.BookStore.WebApi.Domains
         public int IdAutor { get; set; }
         public int IdGenero { get; set; }
 
-        public Autor
     }
 }
