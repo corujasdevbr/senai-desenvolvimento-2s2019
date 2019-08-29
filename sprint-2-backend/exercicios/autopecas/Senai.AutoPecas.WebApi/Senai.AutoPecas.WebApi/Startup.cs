@@ -40,13 +40,13 @@ namespace Senai.AutoPecas.WebApi
 
                     ValidateLifetime = true,
 
-                    IssuerSigningKey = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes("gufos-chave-autenticacao")),
+                    IssuerSigningKey = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes("autopecas-chave-autenticacao")),
 
                     ClockSkew = TimeSpan.FromMinutes(30),
 
-                    ValidIssuer = "Gufos.WebApi",
+                    ValidIssuer = "AutoPecas.WebApi",
 
-                    ValidAudience = "Gufos.WebApi"
+                    ValidAudience = "AutoPecas.WebApi"
                 };
             });
 
