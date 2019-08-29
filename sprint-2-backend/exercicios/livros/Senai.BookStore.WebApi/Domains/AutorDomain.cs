@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Senai.BookStore.WebApi.Domains
 {
-    public class Autor
+    public class AutorDomain
     {
         public int IdAutor { get; set; }
         public string Nome { get; set; }
