@@ -24,8 +24,8 @@ namespace Senai.Ekips.WebApi.Controllers
         public IActionResult Listar()
         {
 
-            var identity = HttpContext.User.Identity as ClaimsIdentity;
-            identity.Claims.First();
+            //var identity = HttpContext.User.Identity as ClaimsIdentity;
+            //identity.Claims.First();
 
             string permissao = HttpContext.User.Claims.First(x => x.Type == ClaimTypes.Role).Value;
             if (permissao == "ADMINISTRADOR")
