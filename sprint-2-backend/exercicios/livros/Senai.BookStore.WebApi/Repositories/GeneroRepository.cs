@@ -27,7 +27,7 @@ namespace Senai.BookStore.WebApi.Repositories
                 // Declara um SqlDataReader que armazenará os valores recuperados
                 SqlDataReader sdr;
 
-                using(SqlCommand cmd = new SqlCommand(query, con))
+                using (SqlCommand cmd = new SqlCommand(query, con))
                 {
                     sdr = cmd.ExecuteReader();
 
@@ -61,6 +61,53 @@ namespace Senai.BookStore.WebApi.Repositories
                 //Executa o comado
                 cmd.ExecuteNonQuery();
             }
+        }
+
+        public GeneroDomain BuscarLivroPorGenero(string nome)
+        {
+            GeneroDomain genero = new GeneroDomain();
+            List<LivroDomain> livros = new List<LivroDomain>();
+
+            using (SqlConnection con = new SqlConnection(StringConexao))
+            {
+                // Declara a instrução a ser executada
+                string query = "SELECT G.IdGenero, G.Descricao, L.IdLivro, L.Titulo, L.IdAutor, A.Nome, A.Email, A.DataNascimento, A.Ativo FROM Generos G JOIN Livros L ON L.IdGenero = G.IdGenero JOIN Autores A ON A.IdAutor = L.IdAutor WHERE G.Descricao = @nome";
+                // Abre a conexão
+                con.Open();
+                // Declara um SqlDataReader que armazenará os valores recuperados
+                SqlDataReader sdr;
+
+
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    cmd.Parameters.AddWithValue("@nome", nome);
+                    sdr = cmd.ExecuteReader();
+                    while (sdr.Read())
+                    {
+                        genero.IdGenero = Convert.ToInt32(sdr["IdGenero"]);
+                        genero.Descricao = sdr["Descricao"].ToString();
+                        LivroDomain livro = new LivroDomain
+                        {
+                            IdLivro = Convert.ToInt32(sdr["IdLivro"]),
+                            Titulo = sdr["Titulo"].ToString(),
+                            Autor = new AutorDomain
+                            {
+                                IdAutor = Convert.ToInt32(sdr["IdAutor"]),
+                                Nome = sdr["Nome"].ToString(),
+                                Email = sdr["Email"].ToString(),
+                                Ativo = (bool)sdr["Ativo"],
+                                DataNascimento = (DateTime)sdr["DataNascimento"]
+                            }
+                        };
+                        livros.Add(livro);
+                    }
+                    if (genero.IdGenero == 0)
+                        return null;
+
+                    genero.livros = livros;
+                }
+            }
+            return genero;
         }
     }
 }

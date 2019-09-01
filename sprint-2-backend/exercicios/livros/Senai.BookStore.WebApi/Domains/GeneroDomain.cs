@@ -9,5 +9,7 @@ namespace Senai.BookStore.WebApi.Domains
     {
         public int IdGenero { get; set; }
         public string Descricao { get; set; }
+
+        public List<LivroDomain> livros { get; set; }
     }
 }

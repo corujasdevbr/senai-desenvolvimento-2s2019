@@ -19,7 +19,10 @@ namespace Senai.BookStore.WebApi.Controllers
         [HttpGet]
         public IActionResult Listar()
         {
-            return Ok(GeneroRepository.Listar());
+            List<GeneroDomain> generos = GeneroRepository.Listar();
+            if (generos.Count() == 0)
+                return NoContent();
+            return Ok(generos);
         }
 
         [HttpPost]
@@ -27,6 +30,15 @@ namespace Senai.BookStore.WebApi.Controllers
         {
             GeneroRepository.Cadastrar(genero);
             return Ok();
+        }
+
+        [HttpGet("buscar/{nome}/livros")]
+        public IActionResult BuscarLivroPorGenero(string nome)
+        {
+            GeneroDomain genero = GeneroRepository.BuscarLivroPorGenero(nome);
+            if (genero == null)
+                return NoContent();
+            return Ok(genero);
         }
     }
 }

@@ -19,7 +19,11 @@ namespace Senai.BookStore.WebApi.Controllers
         [HttpGet]
         public IActionResult Listar()
         {
-            return Ok(AutorRepository.Listar());
+            List<AutorDomain> autores = AutorRepository.Listar();
+            if (autores.Count == 0)
+                return NoContent();
+
+            return Ok(autores);
         }
 
         [HttpPost]
@@ -36,10 +40,24 @@ namespace Senai.BookStore.WebApi.Controllers
             return Ok(autor);
         }
 
+        [HttpGet("{id}/ativos/livros")]
+        public IActionResult BuscarLivrosPorAutorAtivo(int id)
+        {
+            AutorDomain autor = AutorRepository.BuscarLivrosPorAutorAtivo(id);
+            if (autor == null)
+                return NoContent();
+
+            return Ok(autor);
+        }
+
         [HttpGet("ativos")]
         public IActionResult BuscarAutoresAtivos()
         {
-            return Ok(AutorRepository.BuscarAutoresAtivos());
+            List<AutorDomain> autores = AutorRepository.BuscarAutoresAtivos();
+            if (autores.Count == 0)
+                return NoContent();
+
+            return Ok(autores);
         }
 
         [HttpGet("{ano}/nascimento")]

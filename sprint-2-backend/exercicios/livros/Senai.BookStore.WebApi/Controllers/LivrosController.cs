@@ -18,7 +18,10 @@ namespace Senai.BookStore.WebApi.Controllers
         [HttpGet]
         public IActionResult Listar()
         {
-            return Ok(LivroRepository.Listar());
+            List<LivroDomain> livros = LivroRepository.Listar();
+            if (livros.Count() == 0)
+                return NoContent();
+            return Ok(livros);
         }
 
         [HttpGet("{id}")]
