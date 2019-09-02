@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Senai.InLock.WebApi.Domains;
 using Senai.InLock.WebApi.Repositories;
+using Senai.InLock.WebApi.ViewModels;
 
 namespace Senai.InLock.WebApi.Controllers
 {
@@ -35,6 +36,20 @@ namespace Senai.InLock.WebApi.Controllers
         public IActionResult ListarPorLancamento()
         {
             return Ok(JogoRepository.Listar().OrderByDescending(x => x.DataLancamento));
+        }
+
+        [HttpGet("lancamentos")]
+        public IActionResult ListarLancamentos()
+        {
+            var resultado = JogoRepository.Listar()
+            .Select(x => new LancamentoViewModel
+            {
+                DataLancamento = x.DataLancamento,
+                NomeJogo = x.NomeJogo,
+                QtdDias = Convert.ToInt32(Convert.ToDateTime(x.DataLancamento).Subtract(DateTime.Now).TotalDays) < 0 ? 0 : Convert.ToInt32(Convert.ToDateTime(x.DataLancamento).Subtract(DateTime.Now).TotalDays)
+            });
+
+            return Ok(resultado);
         }
 
         [HttpGet("{id}")]

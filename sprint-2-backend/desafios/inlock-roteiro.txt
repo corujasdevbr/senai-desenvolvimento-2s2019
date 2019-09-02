@@ -18,3 +18,5 @@ Microsoft.EntityFrameworkCore.Tools (2.1.11)
 
 + Realizar o Scaffold.
 Scaffold-DbContext "Data Source=localhost; Initial Catalog=InLock;Integrated Security=true" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Domains -ContextDir Contexts -Context InLockContext
+
+Scaffold-DbContext "Data Source=localhost; Initial Catalog=InLock;Integrated Security=true" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Domains -ContextDir Contexts -Context InLockContext -force

@@ -33,6 +33,32 @@ namespace Senai.InLock.WebApi.Repositories
             }
         }
 
+        public List<Estudios> BuscarMeusEstudios(int id)
+        {
+            using (InLockContext ctx = new InLockContext())
+            {
+                return ctx.Estudios.Where(x => x.UsuarioId == id).ToList();
+            }
+        }
+
+        public List<Estudios> ListarEstudiosComUsuarios()
+        {
+            using (InLockContext ctx = new InLockContext())
+            {
+                var resultado = ctx.Estudios.Include(x => x.Usuario).ToList();
+                resultado.ForEach(x => x.Usuario.Senha = null);
+                return resultado;
+            }
+        }
+
+        public List<Estudios> BuscarPorPais(string nome)
+        {
+            using (InLockContext ctx = new InLockContext())
+            {
+                return ctx.Estudios.Include(x => x.Jogos).Where(x => x.PaisOrigem.Contains(nome)).ToList();
+            }
+        }
+
         public Estudios BuscarPorId(int id)
         {
             using (InLockContext ctx = new InLockContext())

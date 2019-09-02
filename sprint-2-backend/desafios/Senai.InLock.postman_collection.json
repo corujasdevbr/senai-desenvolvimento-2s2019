@@ -38,6 +38,127 @@
 					"response": []
 				},
 				{
+					"name": "Estudios.ListarComUsuarios",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGFkbWluLmNvbSIsIk5vbWUiOiJMdWNhcyIsImp0aSI6IjEiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBRE1JTklTVFJBRE9SIiwiZXhwIjoxNTcwMDI1MDMyLCJpc3MiOiJJbkxvY2suV2ViQXBpIiwiYXVkIjoiSW5Mb2NrLldlYkFwaSJ9.cOLvpYiwBQCmTDb_TGmukulCSwjjigCOuKj2LgTZXyQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/api/estudios/usuarios",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"estudios",
+								"usuarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Estudios.DataCriacaoAntigos",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGFkbWluLmNvbSIsIk5vbWUiOiJMdWNhcyIsImp0aSI6IjEiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBRE1JTklTVFJBRE9SIiwiZXhwIjoxNTcwMDI1MDMyLCJpc3MiOiJJbkxvY2suV2ViQXBpIiwiYXVkIjoiSW5Mb2NrLldlYkFwaSJ9.cOLvpYiwBQCmTDb_TGmukulCSwjjigCOuKj2LgTZXyQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/api/estudios/datacriacao/antigos",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"estudios",
+								"datacriacao",
+								"antigos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Estudios.ListarComJogos",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGFkbWluLmNvbSIsIk5vbWUiOiJMdWNhcyIsImp0aSI6IjEiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBRE1JTklTVFJBRE9SIiwiZXhwIjoxNTcwMDI1MDMyLCJpc3MiOiJJbkxvY2suV2ViQXBpIiwiYXVkIjoiSW5Mb2NrLldlYkFwaSJ9.cOLvpYiwBQCmTDb_TGmukulCSwjjigCOuKj2LgTZXyQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/api/estudios/jogos",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"estudios",
+								"jogos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Estudios.ListarMeusEstudios",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGFkbWluLmNvbSIsIk5vbWUiOiJMdWNhcyIsImp0aSI6IjEiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBRE1JTklTVFJBRE9SIiwiZXhwIjoxNTcwMDI1MDMyLCJpc3MiOiJJbkxvY2suV2ViQXBpIiwiYXVkIjoiSW5Mb2NrLldlYkFwaSJ9.cOLvpYiwBQCmTDb_TGmukulCSwjjigCOuKj2LgTZXyQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/api/estudios/meusestudios",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"estudios",
+								"meusestudios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "Estudios.BuscarPorId",
 					"request": {
 						"auth": {
@@ -62,6 +183,69 @@
 								"api",
 								"estudios",
 								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Estudios.BuscarPorNome",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGFkbWluLmNvbSIsIk5vbWUiOiJMdWNhcyIsImp0aSI6IjEiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBRE1JTklTVFJBRE9SIiwiZXhwIjoxNTcwMDI1MDMyLCJpc3MiOiJJbkxvY2suV2ViQXBpIiwiYXVkIjoiSW5Mb2NrLldlYkFwaSJ9.cOLvpYiwBQCmTDb_TGmukulCSwjjigCOuKj2LgTZXyQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/api/estudios/buscar/Rock",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"estudios",
+								"buscar",
+								"Rock"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Estudios.BuscarPorPais",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGFkbWluLmNvbSIsIk5vbWUiOiJMdWNhcyIsImp0aSI6IjEiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBRE1JTklTVFJBRE9SIiwiZXhwIjoxNTcwMDI1MDMyLCJpc3MiOiJJbkxvY2suV2ViQXBpIiwiYXVkIjoiSW5Mb2NrLldlYkFwaSJ9.cOLvpYiwBQCmTDb_TGmukulCSwjjigCOuKj2LgTZXyQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/api/estudios/buscar/EUA/pais",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"estudios",
+								"buscar",
+								"EUA",
+								"pais"
 							]
 						}
 					},
@@ -189,7 +373,308 @@
 		},
 		{
 			"name": "Jogos",
-			"item": []
+			"item": [
+				{
+					"name": "Jogos.Listar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGFkbWluLmNvbSIsIk5vbWUiOiJMdWNhcyIsImp0aSI6IjEiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBRE1JTklTVFJBRE9SIiwiZXhwIjoxNTcwMDI1MDMyLCJpc3MiOiJJbkxvY2suV2ViQXBpIiwiYXVkIjoiSW5Mb2NrLldlYkFwaSJ9.cOLvpYiwBQCmTDb_TGmukulCSwjjigCOuKj2LgTZXyQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/api/jogos",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"jogos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Jogos.ListarLancamentos",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGFkbWluLmNvbSIsIk5vbWUiOiJMdWNhcyIsImp0aSI6IjEiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBRE1JTklTVFJBRE9SIiwiZXhwIjoxNTcwMDI1MDMyLCJpc3MiOiJJbkxvY2suV2ViQXBpIiwiYXVkIjoiSW5Mb2NrLldlYkFwaSJ9.cOLvpYiwBQCmTDb_TGmukulCSwjjigCOuKj2LgTZXyQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/api/jogos/lancamentos",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"jogos",
+								"lancamentos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Jogos.ListarMaisCaros",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGFkbWluLmNvbSIsIk5vbWUiOiJMdWNhcyIsImp0aSI6IjEiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBRE1JTklTVFJBRE9SIiwiZXhwIjoxNTcwMDI1MDMyLCJpc3MiOiJJbkxvY2suV2ViQXBpIiwiYXVkIjoiSW5Mb2NrLldlYkFwaSJ9.cOLvpYiwBQCmTDb_TGmukulCSwjjigCOuKj2LgTZXyQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/api/jogos/ordenar/preco",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"jogos",
+								"ordenar",
+								"preco"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Jogos.ListarPorData",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGFkbWluLmNvbSIsIk5vbWUiOiJMdWNhcyIsImp0aSI6IjEiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBRE1JTklTVFJBRE9SIiwiZXhwIjoxNTcwMDI1MDMyLCJpc3MiOiJJbkxvY2suV2ViQXBpIiwiYXVkIjoiSW5Mb2NrLldlYkFwaSJ9.cOLvpYiwBQCmTDb_TGmukulCSwjjigCOuKj2LgTZXyQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/api/jogos/ordenar/data",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"jogos",
+								"ordenar",
+								"data"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Jogos.BuscarPorId",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGFkbWluLmNvbSIsIk5vbWUiOiJMdWNhcyIsImp0aSI6IjEiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBRE1JTklTVFJBRE9SIiwiZXhwIjoxNTcwMDI1MDMyLCJpc3MiOiJJbkxvY2suV2ViQXBpIiwiYXVkIjoiSW5Mb2NrLldlYkFwaSJ9.cOLvpYiwBQCmTDb_TGmukulCSwjjigCOuKj2LgTZXyQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/api/jogos/1",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"jogos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Jogos.BuscarPorNome",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGFkbWluLmNvbSIsIk5vbWUiOiJMdWNhcyIsImp0aSI6IjEiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBRE1JTklTVFJBRE9SIiwiZXhwIjoxNTcwMDI1MDMyLCJpc3MiOiJJbkxvY2suV2ViQXBpIiwiYXVkIjoiSW5Mb2NrLldlYkFwaSJ9.cOLvpYiwBQCmTDb_TGmukulCSwjjigCOuKj2LgTZXyQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/api/jogos/buscar/Dia",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"jogos",
+								"buscar",
+								"Dia"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Jogos.Cadastrar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGFkbWluLmNvbSIsIk5vbWUiOiJMdWNhcyIsImp0aSI6IjEiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBRE1JTklTVFJBRE9SIiwiZXhwIjoxNTcwMDI1MDMyLCJpc3MiOiJJbkxvY2suV2ViQXBpIiwiYXVkIjoiSW5Mb2NrLldlYkFwaSJ9.cOLvpYiwBQCmTDb_TGmukulCSwjjigCOuKj2LgTZXyQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nomeJogo\": \"WOW\",\r\n    \"descricao\": \"Sou fã.\",\r\n    \"dataLancamento\": \"2004-11-23T00:00:00\",\r\n    \"valor\": 199.00,\r\n    \"estudioId\": 1\r\n}"
+						},
+						"url": {
+							"raw": "localhost:5000/api/jogos",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"jogos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Jogos.Atualizar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGFkbWluLmNvbSIsIk5vbWUiOiJMdWNhcyIsImp0aSI6IjEiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBRE1JTklTVFJBRE9SIiwiZXhwIjoxNTcwMDI1MDMyLCJpc3MiOiJJbkxvY2suV2ViQXBpIiwiYXVkIjoiSW5Mb2NrLldlYkFwaSJ9.cOLvpYiwBQCmTDb_TGmukulCSwjjigCOuKj2LgTZXyQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nomeJogo\": \"WOW - World of Warcraft\",\r\n    \"descricao\": \"Sou fã.\",\r\n    \"dataLancamento\": \"2004-11-23T00:00:00\",\r\n    \"valor\": 199.00,\r\n    \"estudioId\": 1\r\n}"
+						},
+						"url": {
+							"raw": "localhost:5000/api/jogos/3",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"jogos",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Jogos.Deletar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGFkbWluLmNvbSIsIk5vbWUiOiJMdWNhcyIsImp0aSI6IjEiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBRE1JTklTVFJBRE9SIiwiZXhwIjoxNTcwMDI1MDMyLCJpc3MiOiJJbkxvY2suV2ViQXBpIiwiYXVkIjoiSW5Mb2NrLldlYkFwaSJ9.cOLvpYiwBQCmTDb_TGmukulCSwjjigCOuKj2LgTZXyQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "localhost:5000/api/jogos/3",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"jogos",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		},
 		{
 			"name": "Usuarios",

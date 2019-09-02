@@ -47,12 +47,77 @@ namespace Senai.InLock.WebApi.Controllers
             }
         }
 
+        [HttpGet("meusestudios")]
+        public IActionResult BuscarMeusEstudios()
+        {
+            try
+            {
+                int UsuarioIdDoToken = Convert.ToInt32(HttpContext.User.Claims.First(x => x.Type == JwtRegisteredClaimNames.Jti).Value);
+                List<Estudios> estudios = EstudioRepository.BuscarMeusEstudios(UsuarioIdDoToken);
+                if (estudios.Count == 0)
+                    return NotFound();
+                return Ok(estudios);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { mensagem = ex.Message });
+            }
+        }
+
+        [HttpGet("datacriacao/antigos")]
+        public IActionResult BuscarAntigos()
+        {
+            try
+            {
+                List<Estudios> estudios = EstudioRepository.Listar().Where(x => x.DataCriacao < DateTime.Now.AddDays(-10)).ToList();
+                if (estudios.Count == 0)
+                    return NotFound();
+                return Ok(estudios);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { mensagem = ex.Message });
+            }
+        }
+
+        [HttpGet("usuarios")]
+        public IActionResult ListarEstudiosComUsuarios()
+        {
+            try
+            {
+                List<Estudios> estudios = EstudioRepository.ListarEstudiosComUsuarios();
+                if (estudios.Count == 0)
+                    return NotFound();
+                return Ok(estudios);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { mensagem = ex.Message });
+            }
+        }
+
         [HttpGet("buscar/{nome}")]
         public IActionResult BuscarPorNome(string nome)
         {
             try
             {
                 List<Estudios> estudio = EstudioRepository.BuscarPorNome(nome);
+                if (estudio.Count == 0)
+                    return NotFound();
+                return Ok(estudio);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { mensagem = ex.Message });
+            }
+        }
+
+        [HttpGet("buscar/{nome}/pais")]
+        public IActionResult BuscarPorPais(string nome)
+        {
+            try
+            {
+                List<Estudios> estudio = EstudioRepository.BuscarPorPais(nome);
                 if (estudio.Count == 0)
                     return NotFound();
                 return Ok(estudio);

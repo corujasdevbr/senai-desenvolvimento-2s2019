@@ -14,6 +14,7 @@ namespace Senai.InLock.WebApi.Domains
         public string NomeEstudio { get; set; }
         public DateTime DataCriacao { get; set; }
         public int? UsuarioId { get; set; }
+        public string PaisOrigem { get; set; }
 
         public Usuarios Usuario { get; set; }
         public ICollection<Jogos> Jogos { get; set; }

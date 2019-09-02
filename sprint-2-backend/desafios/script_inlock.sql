@@ -17,6 +17,9 @@ GO
 INSERT INTO Usuarios VALUES ('admin@admin.com', 'admin', 'ADMINISTRADOR'), ('cliente@cliente.com', 'cliente', 'CLIENTE')
 GO
 
+INSERT INTO Usuarios VALUES ('administrador@admin.com', 'admin', 'ADMINISTRADOR')
+GO
+
 -- selecionar os usuarios
 SELECT UsuarioId, Email, Senha, Permissao FROM Usuarios
 GO
@@ -25,17 +28,21 @@ GO
 CREATE TABLE Estudios (
 	EstudioId			INT PRIMARY KEY IDENTITY
 	,NomeEstudio		VARCHAR(100) NOT NULL
+	,PaisOrigem			VARCHAR(250)
 	,DataCriacao		DATETIME NOT NULL DEFAULT(GETDATE())
 	,UsuarioId			INT FOREIGN KEY REFERENCES Usuarios (UsuarioId)
 )
 GO
 
 -- inserir os estudios
-INSERT INTO Estudios (NomeEstudio, UsuarioId) VALUES ('Blizzard', 1), ('Rockstar Studios', 1),( 'Square Enix', 1)
+INSERT INTO Estudios (NomeEstudio, PaisOrigem, UsuarioId) VALUES ('Blizzard', 'EUA', 1), ('Rockstar Studios', 'EUA', 1),( 'Square Enix', 'EUA', 1)
+GO
+
+INSERT INTO Estudios (NomeEstudio, PaisOrigem, UsuarioId, DataCriacao) VALUES ('Estúdio A', 'Brasil', 3, GETDATE()-15),('Estúdio B', 'Brasil', 3, GETDATE()-15),( 'Estúdio C', 'Brasil', 3, GETDATE()-15)
 GO
 
 -- selecionar todos os usuarios
-SELECT EstudioId, NomeEstudio, UsuarioId FROM Estudios
+SELECT EstudioId, NomeEstudio, PaisOrigem, DataCriacao, UsuarioId FROM Estudios
 GO
 
 -- criar a tabela de jogos
@@ -53,6 +60,10 @@ GO
 INSERT INTO Jogos (NomeJogo, Descricao, DataLancamento, Valor, EstudioId) VALUES 
 ('Diablo 3','É um jogo que contém bastante ação e é viciante, seja você um novato ou um fã','2012-05-15', '99.00', 1),
 ('Red Dead Redemption II','Jogo eletrônico de ação-aventura western','2018-10-26', '120.00', 2);
+
+INSERT INTO Jogos (NomeJogo, Descricao, DataLancamento, Valor, EstudioId) VALUES 
+('Jogo A','Descricao A','2020-01-10', '100.00', 1)
+GO
 
 -- selecionar os jogos
 SELECT JogoId, NomeJogo, Descricao, DataLancamento, Valor, EstudioId FROM Jogos

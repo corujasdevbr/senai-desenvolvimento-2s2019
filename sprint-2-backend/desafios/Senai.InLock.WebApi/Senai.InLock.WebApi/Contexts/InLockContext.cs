@@ -43,6 +43,10 @@ namespace Senai.InLock.WebApi.Domains
                     .HasMaxLength(100)
                     .IsUnicode(false);
 
+                entity.Property(e => e.PaisOrigem)
+                    .HasMaxLength(250)
+                    .IsUnicode(false);
+
                 entity.HasOne(d => d.Usuario)
                     .WithMany(p => p.Estudios)
                     .HasForeignKey(d => d.UsuarioId)
