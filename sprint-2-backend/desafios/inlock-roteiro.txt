@@ -1,0 +1,4 @@
+Criar o projeto Senai.InLock.WebApi.
+
+Instalar as dependências do NuGet.
+
