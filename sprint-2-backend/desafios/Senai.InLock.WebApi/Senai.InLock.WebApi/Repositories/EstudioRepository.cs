@@ -1,0 +1,57 @@
+﻿using Senai.InLock.WebApi.Domains;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace Senai.InLock.WebApi.Repositories
+{
+    public class EstudioRepository
+    {
+        public List<Estudios> Listar()
+        {
+            using (InLockContext ctx = new InLockContext())
+            {
+                return ctx.Estudios.ToList();
+            }
+        }
+
+        public Estudios BuscarPorId(int id)
+        {
+            using (InLockContext ctx = new InLockContext())
+            {
+                return ctx.Estudios.Find(id);
+            }
+        }
+
+        public void Cadastrar(Estudios estudio)
+        {
+            using (InLockContext ctx = new InLockContext())
+            {
+                ctx.Estudios.Add(estudio);
+                ctx.SaveChanges();
+            }
+        }
+
+        public void Deletar(int id)
+        {
+            using (InLockContext ctx = new InLockContext())
+            {
+                Estudios estudio = ctx.Estudios.Find(id);
+                ctx.Estudios.Remove(estudio);
+                ctx.SaveChanges();
+            }
+        }
+
+        public void Atualizar(int id, Estudios estudio)
+        {
+            using (InLockContext ctx = new InLockContext())
+            {
+                Estudios estudioBuscado = ctx.Estudios.Find(id);
+                estudioBuscado.NomeEstudio = estudio.NomeEstudio;
+                ctx.Estudios.Update(estudioBuscado);
+                ctx.SaveChanges();
+            }
+        }
+    }
+}

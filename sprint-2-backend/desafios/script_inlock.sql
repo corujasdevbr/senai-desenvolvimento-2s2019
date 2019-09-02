@@ -38,6 +38,7 @@ GO
 SELECT EstudioId, NomeEstudio, UsuarioId FROM Estudios
 GO
 
+-- criar a tabela de jogos
 CREATE TABLE Jogos (
 	JogoId				INT PRIMARY KEY IDENTITY
 	,NomeJogo			VARCHAR(50) NOT NULL
@@ -48,6 +49,56 @@ CREATE TABLE Jogos (
 )
 GO
 
+-- inserir os jogos
 INSERT INTO Jogos (NomeJogo, Descricao, DataLancamento, Valor, EstudioId) VALUES 
 ('Diablo 3','É um jogo que contém bastante ação e é viciante, seja você um novato ou um fã','2012-05-15', '99.00', 1),
 ('Red Dead Redemption II','Jogo eletrônico de ação-aventura western','2018-10-26', '120.00', 2);
+
+-- selecionar os jogos
+SELECT JogoId, NomeJogo, Descricao, DataLancamento, Valor, EstudioId FROM Jogos
+GO
+
+-- Listar todos os usuários;
+SELECT UsuarioId, Email, Senha, Permissao FROM Usuarios
+GO
+
+-- Listar todos os estúdios;
+SELECT EstudioId, NomeEstudio, UsuarioId FROM Estudios
+GO
+
+-- Listar todos os jogos;
+SELECT JogoId, NomeJogo, Descricao, DataLancamento, Valor, EstudioId FROM Jogos
+GO
+
+-- Listar todos os jogos e seus respectivos estúdios;
+SELECT J.JogoId, J.NomeJogo, J.Descricao, J.DataLancamento, J.Valor, J.EstudioId, E.EstudioId, E.NomeEstudio, E.DataCriacao
+	FROM Jogos J
+	INNER JOIN Estudios E
+	ON J.EstudioId = E.EstudioId
+GO
+
+-- Buscar e trazer na lista todos os estúdios, mesmo que eles não contenham nenhum jogo de referência;
+SELECT J.JogoId, J.NomeJogo, J.Descricao, J.DataLancamento, J.Valor, J.EstudioId, E.EstudioId, E.NomeEstudio, E.DataCriacao
+	FROM Jogos J
+	RIGHT JOIN Estudios E
+	ON J.EstudioId = E.EstudioId
+GO
+
+SELECT J.JogoId, J.NomeJogo, J.Descricao, J.DataLancamento, J.Valor, J.EstudioId, E.EstudioId, E.NomeEstudio, E.DataCriacao
+	FROM Estudios E
+	LEFT JOIN Jogos J
+	ON J.EstudioId = E.EstudioId
+GO
+
+-- Buscar um usuário por email e senha;
+SELECT U.* FROM Usuarios U
+WHERE U.Email = 'admin@admin.com' AND U.Senha = 'admin'
+GO
+
+-- Buscar um jogo por JogoId;
+SELECT JogoId, NomeJogo, Descricao, DataLancamento, Valor, EstudioId FROM Jogos WHERE JogoId = 1
+GO
+
+-- Buscar um estúdio por EstudioId;
+SELECT EstudioId, NomeEstudio, UsuarioId FROM Estudios WHERE EstudioId = 1
+GO

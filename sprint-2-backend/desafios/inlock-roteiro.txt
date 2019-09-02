@@ -1,4 +1,20 @@
-Criar o projeto Senai.InLock.WebApi.
++ Criar o projeto Senai.InLock.WebApi.
 
-Instalar as dependências do NuGet.
++ Instalar as dependências do NuGet.
+-- Swagger - Documentação
+Swashbuckle.AspNetCore (4.0.1)
 
+-- Autenticação/Autorização - JWT
+System.IdentityModel.Tokens.Jwt (5.5.0)
+Microsoft.AspNetCore.Authentication.JwtBearer (2.1.1)
+
+-- Entity Framework
+Microsoft.EntityFrameworkCore.SqlServer (2.1.11)
+Microsoft.EntityFrameworkCore.SqlServer.Design (1.1.6)
+Microsoft.EntityFrameworkCore.Tools (2.1.11)
+
+
++ Configurar o Startup.cs.
+
++ Realizar o Scaffold.
+Scaffold-DbContext "Data Source=localhost; Initial Catalog=InLock;Integrated Security=true" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Domains -ContextDir Contexts -Context InLockContext
