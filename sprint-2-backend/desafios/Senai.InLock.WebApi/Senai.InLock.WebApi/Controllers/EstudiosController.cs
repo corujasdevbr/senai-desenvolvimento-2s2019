@@ -13,19 +13,24 @@ namespace Senai.InLock.WebApi.Controllers
 {
     [Route("api/[controller]")]
     [Produces("application/json")]
+    [Authorize(Roles = "ADMINISTRADOR")]
     [ApiController]
     public class EstudiosController : ControllerBase
     {
         EstudioRepository EstudioRepository = new EstudioRepository();
         
-        [Authorize]
         [HttpGet]
         public IActionResult Listar()
         {
             return Ok(EstudioRepository.Listar());
         }
 
-        [Authorize(Roles = "ADMINISTRADOR")]
+        [HttpGet("jogos")]
+        public IActionResult ListarEstudiosComJogos()
+        {
+            return Ok(EstudioRepository.ListarEstudiosComJogos());
+        }
+
         [HttpGet("{id}")]
         public IActionResult BuscarPorId(int id)
         {
@@ -42,7 +47,22 @@ namespace Senai.InLock.WebApi.Controllers
             }
         }
 
-        [Authorize(Roles = "ADMINISTRADOR")]
+        [HttpGet("buscar/{nome}")]
+        public IActionResult BuscarPorNome(string nome)
+        {
+            try
+            {
+                List<Estudios> estudio = EstudioRepository.BuscarPorNome(nome);
+                if (estudio.Count == 0)
+                    return NotFound();
+                return Ok(estudio);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { mensagem = ex.Message });
+            }
+        }
+
         [HttpPost]
         public IActionResult Cadastrar(Estudios estudio)
         {
@@ -61,7 +81,6 @@ namespace Senai.InLock.WebApi.Controllers
             }
         }
 
-        [Authorize(Roles = "ADMINISTRADOR")]
         [HttpDelete("{id}")]
         public IActionResult Deletar(int id)
         {
@@ -76,7 +95,6 @@ namespace Senai.InLock.WebApi.Controllers
             }
         }
 
-        [Authorize(Roles = "ADMINISTRADOR")]
         [HttpPut("{id}")]
         public IActionResult Atualizar(int id, Estudios estudio)
         {

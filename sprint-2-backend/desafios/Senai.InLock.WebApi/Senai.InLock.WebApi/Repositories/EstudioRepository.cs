@@ -1,4 +1,5 @@
-﻿using Senai.InLock.WebApi.Domains;
+﻿using Microsoft.EntityFrameworkCore;
+using Senai.InLock.WebApi.Domains;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,6 +14,22 @@ namespace Senai.InLock.WebApi.Repositories
             using (InLockContext ctx = new InLockContext())
             {
                 return ctx.Estudios.ToList();
+            }
+        }
+
+        public List<Estudios> ListarEstudiosComJogos()
+        {
+            using (InLockContext ctx = new InLockContext())
+            {
+                return ctx.Estudios.Include(x => x.Jogos).ToList();
+            }
+        }
+
+        public List<Estudios> BuscarPorNome(string nome)
+        {
+            using (InLockContext ctx = new InLockContext())
+            {
+                return ctx.Estudios.Include(x => x.Jogos).Where(x => x.NomeEstudio.Contains(nome)).ToList();
             }
         }
 
