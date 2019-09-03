@@ -8,12 +8,11 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 
-namespace Senai.Gufos.WebApi
+namespace Senai.CgStore.WebApi
 {
     public class Startup
     {
-        // This method gets called by the runtime. Use this method to add services to the container.
-        // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
+        
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc()
@@ -38,29 +37,22 @@ namespace Senai.Gufos.WebApi
 
                     ValidateLifetime = true,
 
-                    IssuerSigningKey = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes("gufos-chave-autenticacao")),
+                    IssuerSigningKey = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes("cgstore-chave-autenticacao")),
 
                     ClockSkew = TimeSpan.FromMinutes(30),
 
-                    ValidIssuer = "Gufos.WebApi",
+                    ValidIssuer = "CgStore.WebApi",
 
-                    ValidAudience = "Gufos.WebApi"
+                    ValidAudience = "CgStore.WebApi"
                 };
             });
 
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new Swashbuckle.AspNetCore.Swagger.Info { Title = "Gufos API", Version = "v1" });
+                c.SwaggerDoc("v1", new Swashbuckle.AspNetCore.Swagger.Info { Title = "CgStore API", Version = "v1" });
             });
-
-            services.AddCors(options =>
-            {
-                options.AddPolicy("CorsPolicy", builder => builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader().AllowCredentials());
-            });
-
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
             if (env.IsDevelopment())
@@ -68,23 +60,16 @@ namespace Senai.Gufos.WebApi
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseCors("CorsPolicy");
-
             app.UseAuthentication();
 
             app.UseSwagger();
 
             app.UseSwaggerUI(c =>
             {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Gufos API V1");
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "CgStore API V1");
             });
 
             app.UseMvc();
-
-            //app.Run(async (context) =>
-            //{
-            //    await context.Response.WriteAsync("Hello World!");
-            //});
         }
     }
 }
