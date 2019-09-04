@@ -12287,11 +12287,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\_github\\senai-dev-2s2019\\sprint-2-backend\\revisao\\Senai.CgStore.WebApi\\Senai.CgStore.WebApi\\Senai.CgStore.WebApi.csproj",
+      "projectUniqueName": "C:\\_github\\senai-dev-2s2019\\sprint-2-backend\\roteiros\\RoteiroExtra\\Interfaces\\Senai.CgStore.WebApi\\Senai.CgStore.WebApi\\Senai.CgStore.WebApi.csproj",
       "projectName": "Senai.CgStore.WebApi",
-      "projectPath": "C:\\_github\\senai-dev-2s2019\\sprint-2-backend\\revisao\\Senai.CgStore.WebApi\\Senai.CgStore.WebApi\\Senai.CgStore.WebApi.csproj",
+      "projectPath": "C:\\_github\\senai-dev-2s2019\\sprint-2-backend\\roteiros\\RoteiroExtra\\Interfaces\\Senai.CgStore.WebApi\\Senai.CgStore.WebApi\\Senai.CgStore.WebApi.csproj",
       "packagesPath": "C:\\Users\\admin.local\\.nuget\\packages\\",
-      "outputPath": "C:\\_github\\senai-dev-2s2019\\sprint-2-backend\\revisao\\Senai.CgStore.WebApi\\Senai.CgStore.WebApi\\obj\\",
+      "outputPath": "C:\\_github\\senai-dev-2s2019\\sprint-2-backend\\roteiros\\RoteiroExtra\\Interfaces\\Senai.CgStore.WebApi\\Senai.CgStore.WebApi\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
