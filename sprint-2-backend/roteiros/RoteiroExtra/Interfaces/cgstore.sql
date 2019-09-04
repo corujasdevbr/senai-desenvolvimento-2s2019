@@ -12,6 +12,7 @@ CREATE TABLE Permissoes
 GO
 
 INSERT INTO Permissoes (Nome) VALUES ('Administrador'), ('Comum');
+-- ADMINISTRADOR
 
 SELECT PermissaoId, Nome FROM Permissoes
 GO
