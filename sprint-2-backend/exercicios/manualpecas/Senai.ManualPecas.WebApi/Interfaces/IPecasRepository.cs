@@ -14,6 +14,6 @@ namespace Senai.ManualPecas.WebApi.Interfaces
 
         List<Pecas> Listar();
         List<Pecas> ListaCrescente();
-        List<Pecas> ListaPorFornecedor(Fornecedores fornecedor);
+        List<Pecas> ListaPorFornecedor(int id);
     }
 }

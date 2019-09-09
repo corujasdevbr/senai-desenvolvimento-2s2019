@@ -4,6 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Senai.ManualPecas.WebApi.Interfaces;
+using Senai.ManualPecas.WebApi.Repositories;
 
 namespace Senai.ManualPecas.WebApi.Controllers
 {
@@ -12,11 +14,18 @@ namespace Senai.ManualPecas.WebApi.Controllers
     [ApiController]
     public class FornecedoresController : ControllerBase
     {
+        private IFornecedorRepository FornecedorRepository { get; set; }
 
-        [HttpGet]
-        public IActionResult Lista()
+        public FornecedoresController()
         {
-            return Ok();
+            FornecedorRepository = new FornecedorRepository();
         }
+
+        [HttpGet("{id}")]
+        public IActionResult ListarMaisBaratos(int id)
+        {
+            return Ok(FornecedorRepository.ListaMaisBaratos(id));
+        }
+
     }
 }

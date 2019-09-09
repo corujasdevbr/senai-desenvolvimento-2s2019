@@ -14,11 +14,12 @@ CREATE TABLE Fornecedores(
 CREATE TABLE Pecas(
 	PecaId INT PRIMARY KEY IDENTITY NOT NULL,
 	Codigo VARCHAR(255) UNIQUE NOT NULL,
-	Descricao TEXT NOT NULL
+	Descricao VARCHAR(255) NOT NULL
 );
 
 CREATE TABLE FornecedoresPecas(
 	FornecedorId INT FOREIGN KEY REFERENCES Fornecedores(FornecedorId),
 	PecaId INT FOREIGN KEY REFERENCES Pecas(PecaId),
-	Preco DECIMAL(10,2) NOT NULL
+	Preco FLOAT(2) NOT NULL
 );
+

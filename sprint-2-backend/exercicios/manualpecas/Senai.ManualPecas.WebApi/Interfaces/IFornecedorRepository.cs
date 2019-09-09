@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace Senai.ManualPecas.WebApi.Interfaces
 {
-    interface IFornecedoresRepository
+    interface IFornecedorRepository
     {
         void Cadastrar(Fornecedores fornecedor);
 
-        List<Fornecedores> ListaMaisBaratos();
+        List<Fornecedores> ListaMaisBaratos(int id);
     }
 }
