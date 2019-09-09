@@ -1,0 +1,11 @@
+C:\Users\erikv\source\repos\Senai.ManualPecas.WebApi\bin\Debug\netcoreapp2.1\Senai.ManualPecas.WebApi.deps.json
+C:\Users\erikv\source\repos\Senai.ManualPecas.WebApi\bin\Debug\netcoreapp2.1\Senai.ManualPecas.WebApi.runtimeconfig.json
+C:\Users\erikv\source\repos\Senai.ManualPecas.WebApi\bin\Debug\netcoreapp2.1\Senai.ManualPecas.WebApi.runtimeconfig.dev.json
+C:\Users\erikv\source\repos\Senai.ManualPecas.WebApi\bin\Debug\netcoreapp2.1\Senai.ManualPecas.WebApi.dll
+C:\Users\erikv\source\repos\Senai.ManualPecas.WebApi\obj\Debug\netcoreapp2.1\Senai.ManualPecas.WebApi.csprojAssemblyReference.cache
+C:\Users\erikv\source\repos\Senai.ManualPecas.WebApi\obj\Debug\netcoreapp2.1\Senai.ManualPecas.WebApi.csproj.CoreCompileInputs.cache
+C:\Users\erikv\source\repos\Senai.ManualPecas.WebApi\obj\Debug\netcoreapp2.1\Senai.ManualPecas.WebApi.RazorAssemblyInfo.cache
+C:\Users\erikv\source\repos\Senai.ManualPecas.WebApi\obj\Debug\netcoreapp2.1\Senai.ManualPecas.WebApi.RazorAssemblyInfo.cs
+C:\Users\erikv\source\repos\Senai.ManualPecas.WebApi\obj\Debug\netcoreapp2.1\Senai.ManualPecas.WebApi.AssemblyInfoInputs.cache
+C:\Users\erikv\source\repos\Senai.ManualPecas.WebApi\obj\Debug\netcoreapp2.1\Senai.ManualPecas.WebApi.AssemblyInfo.cs
+C:\Users\erikv\source\repos\Senai.ManualPecas.WebApi\obj\Debug\netcoreapp2.1\Senai.ManualPecas.WebApi.RazorTargetAssemblyInfo.cache
