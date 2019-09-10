@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Senai.ManualPecas.WebApi.Domains;
 using Senai.ManualPecas.WebApi.Interfaces;
 using Senai.ManualPecas.WebApi.Repositories;
 
@@ -22,9 +23,21 @@ namespace Senai.ManualPecas.WebApi.Controllers
         }
 
         [HttpGet("{id}")]
-        public IActionResult ListarMaisBaratos(int id)
+        public IActionResult ListarMaisBaratos(int pecaId)
         {
-            return Ok(FornecedorRepository.ListaMaisBaratos(id));
+            return Ok(FornecedorRepository.ListaMaisBaratos(pecaId));
+        }
+
+        [HttpPost]
+        public IActionResult Cadastrar(Fornecedores fornecedor)
+        {
+            try
+            {
+                FornecedorRepository.Cadastrar(fornecedor);
+                return Ok();
+            }catch (Exception e){
+                return BadRequest(new { mensagem = e });
+            }
         }
 
     }

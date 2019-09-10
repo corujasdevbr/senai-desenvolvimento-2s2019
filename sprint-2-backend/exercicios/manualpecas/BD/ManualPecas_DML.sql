@@ -18,3 +18,4 @@ INSERT INTO FornecedoresPecas (FornecedorId, PecaId, Preco) VALUES (3,2, 20);
 SELECT * FROM Pecas;
 SELECT * FROM FornecedoresPecas;
 SELECT * FROM Fornecedores;
+

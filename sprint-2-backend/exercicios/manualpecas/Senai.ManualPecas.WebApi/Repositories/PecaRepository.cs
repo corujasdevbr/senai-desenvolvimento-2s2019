@@ -1,4 +1,5 @@
-﻿using Senai.ManualPecas.WebApi.Domains;
+﻿using Microsoft.EntityFrameworkCore;
+using Senai.ManualPecas.WebApi.Domains;
 using Senai.ManualPecas.WebApi.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -11,6 +12,11 @@ namespace Senai.ManualPecas.WebApi.Repositories
     {
         public void Atualizar(Pecas peca)
         {
+            using (ManualPecasContext ctx = new ManualPecasContext())
+            {
+                ctx.Pecas.Update(peca);
+                ctx.SaveChanges();
+            }
         }
 
         public void Cadastrar(Pecas peca)
@@ -23,7 +29,10 @@ namespace Senai.ManualPecas.WebApi.Repositories
 
         public List<Pecas> ListaCrescente()
         {
-            return null;
+            using (ManualPecasContext ctx = new ManualPecasContext())
+            {
+                return ctx.
+            }
         }
 
         public List<Pecas> ListaPorFornecedor(int id)

@@ -3,6 +3,7 @@ using Senai.ManualPecas.WebApi.Domains;
 using Senai.ManualPecas.WebApi.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -23,7 +24,8 @@ namespace Senai.ManualPecas.WebApi.Repositories
         {
             using (ManualPecasContext ctx = new ManualPecasContext())
             {
-                 return ctx.Fornecedores.FromSql("EXEC prListaMaisBarato 2").ToList();
+                var pecaId = new SqlParameter("id", id);
+                return ctx.Fornecedores.FromSql("EXEC prListaMaisBarato @id", pecaId).ToList();
             }
         }
     }
