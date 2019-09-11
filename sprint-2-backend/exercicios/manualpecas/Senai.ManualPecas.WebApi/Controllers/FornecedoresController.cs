@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Senai.ManualPecas.WebApi.Domains;
@@ -22,10 +24,26 @@ namespace Senai.ManualPecas.WebApi.Controllers
             FornecedorRepository = new FornecedorRepository();
         }
 
-        [HttpGet("{id}")]
-        public IActionResult ListarMaisBaratos(int pecaId)
+        [HttpPut]
+        [Authorize]
+        public IActionResult Atualizar(Fornecedores fornecedor)
         {
-            return Ok(FornecedorRepository.ListaMaisBaratos(pecaId));
+            try
+            {
+                int tokenId = Convert.ToInt32(HttpContext.User.Claims.First(x => x.Type == JwtRegisteredClaimNames.Jti).Value);
+
+                Fornecedores fornecedorBuscado = FornecedorRepository.BuscarPorId(tokenId);
+
+                fornecedorBuscado.Cnpj = fornecedor.Cnpj ?? fornecedorBuscado.Cnpj;
+                fornecedorBuscado.Nome = fornecedor.Nome ?? fornecedorBuscado.Nome;
+                fornecedorBuscado.Senha = fornecedor.Senha ?? fornecedorBuscado.Senha;
+
+                FornecedorRepository.Atualizar(fornecedorBuscado);
+                return Ok();
+            }catch (Exception e)
+            {
+                return BadRequest(new { mensagem = e.Message });
+            }
         }
 
         [HttpPost]
@@ -35,9 +53,17 @@ namespace Senai.ManualPecas.WebApi.Controllers
             {
                 FornecedorRepository.Cadastrar(fornecedor);
                 return Ok();
-            }catch (Exception e){
-                return BadRequest(new { mensagem = e });
             }
+            catch (Exception e)
+            {
+                return BadRequest(new { mensagem = e.Message });
+            }
+        }
+
+        [HttpGet("{pecaId}")]
+        public IActionResult ListarMaisBaratos(int pecaId)
+        {
+            return Ok(FornecedorRepository.BuscarMaisBaratos(pecaId));
         }
 
     }

@@ -1,4 +1,5 @@
 ﻿using Senai.ManualPecas.WebApi.Domains;
+using Senai.ManualPecas.WebApi.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +10,9 @@ namespace Senai.ManualPecas.WebApi.Interfaces
     interface IFornecedorRepository
     {
         void Cadastrar(Fornecedores fornecedor);
-
-        List<Fornecedores> ListaMaisBaratos(int id);
+        void Atualizar(Fornecedores fornecedor);
+        Fornecedores BuscarPorCNPJeSenha(LoginViewModel login);
+        Fornecedores BuscarPorId(int fornecedorId);
+        List<Fornecedores> BuscarMaisBaratos(int pecaId);
     }
 }

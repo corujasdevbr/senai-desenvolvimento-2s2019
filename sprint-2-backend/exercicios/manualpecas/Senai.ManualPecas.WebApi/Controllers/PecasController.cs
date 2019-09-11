@@ -1,15 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Senai.ManualPecas.WebApi.Interfaces;
 using Senai.ManualPecas.WebApi.Repositories;
+using Senai.ManualPecas.WebApi.ViewModels;
+using System;
+using System.IdentityModel.Tokens.Jwt;
+using System.Linq;
 
 namespace Senai.ManualPecas.WebApi.Controllers
 {
     [Route("api/[controller]")]
+    [Produces("application/json")]
     [ApiController]
     public class PecasController : ControllerBase
     {
@@ -21,8 +22,14 @@ namespace Senai.ManualPecas.WebApi.Controllers
         }
 
 
-
-
+        [Authorize]
+        [HttpPost]
+        public IActionResult Cadastrar(PecaViewModel peca)
+        {
+            peca.FornecedorId = Convert.ToInt32(HttpContext.User.Claims.First(x => x.Type == JwtRegisteredClaimNames.Jti).Value);
+            PecasRepository.Cadastrar(peca);
+            return Ok();
+        }
 
     }
 }

@@ -42,13 +42,13 @@ namespace Senai.ManualPecas.WebApi
 
                     ValidateLifetime = true,
                     // Assinatura
-                    IssuerSigningKey = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes("manualpecas-chave-autenticacao")),
+                    IssuerSigningKey = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes("ManualPecas-chave-autenticacao")),
 
                     ClockSkew = TimeSpan.FromMinutes(30),
 
-                    ValidIssuer = "manualpecas.WebApi",
+                    ValidIssuer = "ManualPecas.WebApi",
 
-                    ValidAudience = "manualpecas.WebApi"
+                    ValidAudience = "ManualPecas.WebApi"
                 };
             });
 

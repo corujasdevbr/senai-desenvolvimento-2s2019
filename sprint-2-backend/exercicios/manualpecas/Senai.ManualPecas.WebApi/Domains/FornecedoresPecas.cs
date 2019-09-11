@@ -7,11 +7,11 @@ namespace Senai.ManualPecas.WebApi.Domains
 {
     public class FornecedoresPecas
     {
-        public Fornecedores Fornecedor { get; set; }
+        public virtual Fornecedores Fornecedor { get; set; }
         public int? FornecedorId { get; set; }
 
         public int? PecaId { get; set; }
-        public Pecas Peca { get; set; }
+        public virtual Pecas Peca { get; set; }
 
         public float Preco { get; set; }
 

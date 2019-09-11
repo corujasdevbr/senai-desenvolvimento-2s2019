@@ -26,7 +26,6 @@ namespace Senai.ManualPecas.WebApi.Domains
         {
             if (!optionsBuilder.IsConfigured)
             {
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
                 optionsBuilder.UseSqlServer("Data Source=localhost; Initial Catalog=ManualPecas; Integrated Security=True");
             }
         }
@@ -43,7 +42,7 @@ namespace Senai.ManualPecas.WebApi.Domains
 
 
             modelBuilder.Entity<FornecedoresPecas>()
-                .HasOne<Pecas>(sc => sc.Peca)
+                .HasOne(sc => sc.Peca)
                 .WithMany(sc => sc.FornecedoresPecas)
                 .HasForeignKey(sc => sc.PecaId);
 

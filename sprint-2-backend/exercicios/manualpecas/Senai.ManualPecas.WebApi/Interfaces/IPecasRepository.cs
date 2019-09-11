@@ -1,4 +1,5 @@
 ﻿using Senai.ManualPecas.WebApi.Domains;
+using Senai.ManualPecas.WebApi.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,12 +9,12 @@ namespace Senai.ManualPecas.WebApi.Interfaces
 {
     interface IPecasRepository
     {
-        void Cadastrar(Pecas peca);
+        void Cadastrar(PecaViewModel peca);
         void Atualizar(Pecas peca);
-        void Deletar(Pecas peca);
-
+        void Deletar(int pecaId);
         List<Pecas> Listar();
-        List<Pecas> ListaCrescente();
-        List<Pecas> ListaPorFornecedor(int id);
+
+        List<Pecas> ListarEmOrdemCrescente();
+        List<Pecas> BuscarPorFornecedor(int fornecedorId);
     }
 }

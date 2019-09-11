@@ -8,6 +8,6 @@ namespace Senai.ManualPecas.WebApi.Domains
         public int PecaId { get; set; }
         public string Codigo { get; set; }
         public string Descricao { get; set; }
-        public List<FornecedoresPecas> FornecedoresPecas { get; set; }
+        public virtual ICollection<FornecedoresPecas> FornecedoresPecas { get; set; }
     }
 }
