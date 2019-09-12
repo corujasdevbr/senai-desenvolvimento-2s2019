@@ -9,7 +9,10 @@ namespace Senai.ManualPecas.WebApi.ViewModels
     {
         public string Codigo { get; set; }
         public string Descricao { get; set; }
+
         public float Preco { get; set; }
+
         public int FornecedorId { get; set; }
+        public int PecaId { get; set; }
     }
 }

@@ -20,7 +20,7 @@ namespace Senai.ManualPecas.WebApi.Domains
         public virtual DbSet<FornecedoresPecas> FornecedoresPecas { get; set; }
 
 
-        // Unable to generate entity type for table 'dbo.FornecedoresPecas'. Please see the warning messages.
+        // Unable to generate entity type for table 'dbo.ListaFornecedoresPecas'. Please see the warning messages.
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -37,13 +37,13 @@ namespace Senai.ManualPecas.WebApi.Domains
 
             modelBuilder.Entity<FornecedoresPecas>()
             .HasOne(sc => sc.Fornecedor)
-            .WithMany(sc => sc.FornecedoresPecas)
+            .WithMany(sc => sc.ListaFornecedoresPecas)
             .HasForeignKey(sc => sc.FornecedorId);
 
 
             modelBuilder.Entity<FornecedoresPecas>()
                 .HasOne(sc => sc.Peca)
-                .WithMany(sc => sc.FornecedoresPecas)
+                .WithMany(sc => sc.ListaFornecedoresPecas)
                 .HasForeignKey(sc => sc.PecaId);
 
             modelBuilder.Entity<Fornecedores>(entity =>

@@ -10,6 +10,6 @@ namespace Senai.ManualPecas.WebApi.Domains
         public string Nome { get; set; }
         public string Cnpj { get; set; }
 
-        public virtual ICollection<FornecedoresPecas> FornecedoresPecas { get; set; }
+        public virtual List<FornecedoresPecas> ListaFornecedoresPecas { get; set; }
     }
 }

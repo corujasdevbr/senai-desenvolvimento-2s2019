@@ -13,9 +13,6 @@ namespace Senai.ManualPecas.WebApi.Repositories
 {
     public class FornecedorRepository : IFornecedorRepository
     {
-        // TODO - Remover
-        ManualPecasContext ctx = new ManualPecasContext();
-
         public void Atualizar(Fornecedores fornecedor)
         {
             using (ManualPecasContext ctx = new ManualPecasContext())
@@ -32,12 +29,13 @@ namespace Senai.ManualPecas.WebApi.Repositories
                 ctx.SaveChanges();
             }
         }
+
         public Fornecedores BuscarPorCNPJeSenha(LoginViewModel login)
         {
             using (ManualPecasContext ctx = new ManualPecasContext())
             {
                 Fornecedores fornecedor = ctx.Fornecedores.FirstOrDefault(x => x.Cnpj == login.Cnpj && x.Senha == login.Senha);
-                if(fornecedor == null)
+                if (fornecedor == null)
                     return null;
 
                 return fornecedor;
@@ -45,7 +43,6 @@ namespace Senai.ManualPecas.WebApi.Repositories
         }
         public Fornecedores BuscarPorId(int fornecedorId)
         {
-            // TODO: Perguntar pra helena pq não fazer dessa forma
             using (ManualPecasContext ctx = new ManualPecasContext())
             {
                 Fornecedores fornecedor = ctx.Fornecedores.FirstOrDefault(x => x.FornecedorId == fornecedorId);
@@ -55,15 +52,49 @@ namespace Senai.ManualPecas.WebApi.Repositories
                 return fornecedor;
             }
         }
-        public List<Fornecedores> BuscarMaisBaratos(int pecaId)
-        { 
-            using (ManualPecasContext ctx = new ManualPecasContext())
-            {
-                var id = new SqlParameter("id", pecaId);
-                return ctx.Fornecedores.FromSql("EXEC prListaMaisBarato @id", id).ToList();
-            }
-        }
 
-     
+        public Pecas BuscarMaisBaratos(int pecaId)
+        {
+            string StringConexao = "Data Source = localhost; Initial Catalog = ManualPecas; Integrated Security = True";
+            List<Fornecedores> fornecedores = new List<Fornecedores>();
+            Pecas peca = new Pecas();
+            using (SqlConnection con = new SqlConnection(StringConexao))
+            {
+                string query = "EXEC prListaMaisBarato @id";
+
+                con.Open();
+
+                SqlDataReader sdr;
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    cmd.Parameters.AddWithValue("@id", pecaId);
+                    sdr = cmd.ExecuteReader();
+                    
+                   List<FornecedoresPecas> listaFP = new                   List<FornecedoresPecas>();
+                    while (sdr.Read())
+                    {
+                        peca.PecaId = Convert.ToInt32(sdr["PecaId"]);
+                        peca.Descricao = sdr["Descricao"].ToString();
+                        peca.Codigo = sdr["Codigo"].ToString();
+                        FornecedoresPecas FP = new FornecedoresPecas()
+                        {
+                            Preco = (float)sdr["Preco"],
+                            Peca = peca,
+                            Fornecedor = new Fornecedores
+                            {
+                                FornecedorId = Convert.ToInt32(sdr["FornecedorId"]),
+                                Cnpj = sdr["CNPJ"].ToString(),
+                                Nome = sdr["Nome"].ToString(),
+                                ListaFornecedoresPecas = listaFP
+                            }
+                            
+                        };
+                        listaFP.Add(FP);
+                    }
+                    peca.ListaFornecedoresPecas = listaFP;
+                }
+            }
+            return peca;
+        }
     }
 }

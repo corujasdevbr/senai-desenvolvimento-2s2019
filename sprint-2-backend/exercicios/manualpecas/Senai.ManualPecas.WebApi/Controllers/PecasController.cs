@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Senai.ManualPecas.WebApi.Domains;
 using Senai.ManualPecas.WebApi.Interfaces;
 using Senai.ManualPecas.WebApi.Repositories;
 using Senai.ManualPecas.WebApi.ViewModels;
@@ -21,9 +22,31 @@ namespace Senai.ManualPecas.WebApi.Controllers
             PecasRepository = new PecaRepository();
         }
 
-
+        [HttpPut("{pecaId}")]
         [Authorize]
+        public IActionResult Atualizar(int pecaId, PecaViewModel peca)
+        {
+            try
+            {
+                Pecas pecaBuscada = PecasRepository.BuscarPorId(pecaId);
+
+                if (pecaBuscada == null)
+                    return NoContent();
+
+                pecaBuscada.Codigo = peca.Codigo ?? pecaBuscada.Codigo;
+                pecaBuscada.Descricao = peca.Descricao ?? pecaBuscada.Descricao;
+
+                PecasRepository.Atualizar(pecaBuscada);
+                return Ok();
+            }
+            catch (Exception e)
+            {
+                return BadRequest(new { mensagem = e.Message });
+            }
+        }
+
         [HttpPost]
+        [Authorize]
         public IActionResult Cadastrar(PecaViewModel peca)
         {
             peca.FornecedorId = Convert.ToInt32(HttpContext.User.Claims.First(x => x.Type == JwtRegisteredClaimNames.Jti).Value);
@@ -31,5 +54,36 @@ namespace Senai.ManualPecas.WebApi.Controllers
             return Ok();
         }
 
+        [HttpDelete("{pecaId}")]
+        [Authorize]
+        public IActionResult Deletar(int pecaId)
+        {
+            PecaViewModel peca = new PecaViewModel
+            {
+                PecaId = pecaId,
+                FornecedorId = Convert.ToInt32(HttpContext.User.Claims.First(x => x.Type == JwtRegisteredClaimNames.Jti).Value)
+            };
+
+            PecasRepository.Deletar(peca);
+            return Ok();
+        }
+
+        [HttpGet]
+        public IActionResult Listar()
+        {
+            return Ok(PecasRepository.Listar());
+        }
+
+        [HttpGet("ListarCrescente")]
+        public IActionResult ListarEmOrdemCrescente()
+        {
+            return Ok(PecasRepository.ListarEmOrdemCrescente());
+        }
+
+        [HttpGet("BuscarPorFornecedor/{fornecedorId}")]
+        public IActionResult BuscarPorFornecedor(int fornecedorId)
+        {
+            return Ok(PecasRepository.BuscarPorFornecedor(fornecedorId));
+        }
     }
 }

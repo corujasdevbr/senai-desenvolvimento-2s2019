@@ -13,6 +13,6 @@ namespace Senai.ManualPecas.WebApi.Interfaces
         void Atualizar(Fornecedores fornecedor);
         Fornecedores BuscarPorCNPJeSenha(LoginViewModel login);
         Fornecedores BuscarPorId(int fornecedorId);
-        List<Fornecedores> BuscarMaisBaratos(int pecaId);
+        Pecas BuscarMaisBaratos(int pecaId);
     }
 }

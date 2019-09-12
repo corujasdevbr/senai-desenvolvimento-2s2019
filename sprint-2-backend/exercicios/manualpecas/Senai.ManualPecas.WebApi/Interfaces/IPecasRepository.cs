@@ -11,10 +11,12 @@ namespace Senai.ManualPecas.WebApi.Interfaces
     {
         void Cadastrar(PecaViewModel peca);
         void Atualizar(Pecas peca);
-        void Deletar(int pecaId);
-        List<Pecas> Listar();
+        void Deletar(PecaViewModel peca);
 
+        Fornecedores BuscarPorFornecedor(int fornecedorId);
+
+        List<Pecas> Listar();
         List<Pecas> ListarEmOrdemCrescente();
-        List<Pecas> BuscarPorFornecedor(int fornecedorId);
+        Pecas BuscarPorId(int pecaId);
     }
 }

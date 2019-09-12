@@ -60,7 +60,7 @@ namespace Senai.ManualPecas.WebApi.Controllers
             }
         }
 
-        [HttpGet("{pecaId}")]
+        [HttpGet("MenorPreco/{pecaId}")]
         public IActionResult ListarMaisBaratos(int pecaId)
         {
             return Ok(FornecedorRepository.BuscarMaisBaratos(pecaId));

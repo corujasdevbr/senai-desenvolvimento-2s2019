@@ -14,11 +14,14 @@ namespace Senai.ManualPecas.WebApi.Repositories
     {
         public void Atualizar(Pecas peca)
         {
-            // TODO: Fazer
+            using(ManualPecasContext ctx = new ManualPecasContext())
+            {
+                ctx.Pecas.Update(peca);
+                ctx.SaveChanges();
+            }
         }
         public void Cadastrar(PecaViewModel peca)
         {
-            // TODO: Fazer
             using (ManualPecasContext ctx = new ManualPecasContext())
             {
                 var Codigo = new SqlParameter("Codigo", peca.Codigo);
@@ -26,37 +29,122 @@ namespace Senai.ManualPecas.WebApi.Repositories
                 var Preco = new SqlParameter("Preco", peca.Preco);
                 var FornecedorId = new SqlParameter("FornecedorId", peca.FornecedorId);
 
-                // TODO: Olhar try catch
-                try
-                {
-                    ctx.Pecas.FromSql("EXEC prAdicionaERetornaPeca @Codigo, @Descricao, @FornecedorId, @Preco",
-                        Codigo, Descricao, Preco, FornecedorId).ToList();
-                }
-                catch
-                {
-                    return;
-                }
+                ctx.Database.ExecuteSqlCommand("EXEC dbo.prAdicionaERetornaPeca @Codigo, @Descricao, @FornecedorId, @Preco",
+                    Codigo, Descricao, FornecedorId, Preco);
             }
         }
-        public void Deletar(int pecaId)
+        public void Deletar(PecaViewModel peca)
         {
-            // TODO: Fazer
+            using(ManualPecasContext ctx = new ManualPecasContext())
+            {
+                var pecaId = new SqlParameter("PecaId", peca.PecaId);
+                var fornecedorId = new SqlParameter("ForncedorId", peca.FornecedorId);
+
+                ctx.Database.ExecuteSqlCommand("EXEC prRemovePeca @PecaId, @ForncedorId",
+                    pecaId, fornecedorId);
+            }
         }
 
-        public List<Pecas> BuscarPorFornecedor(int fornecedorId)
+        public Fornecedores BuscarPorFornecedor(int fornecedorId)
         {
-            // TODO: Fazer
-            return null;
+            string StringConexao = "Data Source = localhost; Initial Catalog = ManualPecas; Integrated Security = True";
+
+            Fornecedores fornecedor = new Fornecedores();
+            using (SqlConnection con = new SqlConnection(StringConexao))
+            {
+                string query = "SELECT * FROM vwJoinFornecedoresPecas WHERE FornecedorId = @id ORDER BY Codigo ASC";
+
+                con.Open();
+
+                SqlDataReader sdr;
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    cmd.Parameters.AddWithValue("@id", fornecedorId);
+                    sdr = cmd.ExecuteReader();
+                    List<FornecedoresPecas> listaFP = new List<FornecedoresPecas>();
+                    while (sdr.Read())
+                    {
+                        fornecedor.FornecedorId = Convert.ToInt32(sdr["FornecedorId"]);
+                        fornecedor.Cnpj = sdr["CNPJ"].ToString();
+                        fornecedor.Nome = sdr["Nome"].ToString();
+
+                        FornecedoresPecas FP = new FornecedoresPecas()
+                        {
+                            Preco = (float)sdr["Preco"],
+                            Peca = new Pecas
+                            {
+                                PecaId = Convert.ToInt32(sdr["PecaId"]),
+                                Descricao = sdr["Descricao"].ToString(),
+                                Codigo = sdr["Codigo"].ToString(),
+                                ListaFornecedoresPecas = listaFP
+
+                            }
+
+                        };
+                        listaFP.Add(FP);
+                    }
+                    fornecedor.ListaFornecedoresPecas = listaFP;
+                }
+            }
+            return fornecedor;
         }
+
         public List<Pecas> Listar()
         {
-            // TODO: Fazer
-            return null;
+            using (ManualPecasContext ctx = new ManualPecasContext())
+            {
+                return ctx.Pecas.ToList();
+            }
         }
         public List<Pecas> ListarEmOrdemCrescente()
         {
-            // TODO: Fazer
-            return null;
+            string StringConexao = "Data Source = localhost; Initial Catalog = ManualPecas; Integrated Security = True";
+            List<Pecas> pecas = new List<Pecas>();
+
+            using (SqlConnection con = new SqlConnection(StringConexao))
+            {
+                string query = "SELECT * FROM vwJoinFornecedoresPecas ORDER BY Preco ASC";
+
+                con.Open();
+
+                SqlDataReader sdr;
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    sdr = cmd.ExecuteReader();
+
+                    while (sdr.Read())
+                    {
+                        Pecas peca = new Pecas
+                        {
+                            PecaId = Convert.ToInt32(sdr["PecaId"]),
+                            Descricao = sdr["Descricao"].ToString(),
+                            Codigo = sdr["Codigo"].ToString(),
+                            ListaFornecedoresPecas = new List<FornecedoresPecas>
+                            {
+                                new FornecedoresPecas
+                                {
+                                    Preco = (float) sdr["Preco"],
+                                    Fornecedor = new Fornecedores
+                                    {
+                                        FornecedorId = Convert.ToInt32(sdr["FornecedorId"]),
+                                        Cnpj = sdr["CNPJ"].ToString(),
+                                        Nome = sdr["Nome"].ToString()
+                                    }
+                                }
+                            }
+                        };
+                        pecas.Add(peca);
+                    }
+                }
+            }
+            return pecas;
+        }
+        public Pecas BuscarPorId(int pecaId)
+        {
+            using (ManualPecasContext ctx = new ManualPecasContext())
+            {
+                return ctx.Pecas.FirstOrDefault(x => x.PecaId == pecaId);
+            }
         }
     }
 }
