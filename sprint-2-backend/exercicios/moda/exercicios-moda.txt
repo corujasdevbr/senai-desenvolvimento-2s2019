@@ -1,43 +1,45 @@
-O Aplicativo Shirt Store È uma plataforma onde s„o mostrado as Camisetas de v·rias marcas.
-VocÍ foi contratado por ela para desenvolver uma API que ser· utilizada pelo front-end que trabalha na empresa.
-A Shirt Store disponibilizou o script do banco de dados que j· foi feito por um DBA.
+O Aplicativo Shirt Store √© uma plataforma onde s√£o mostrado as Camisetas de v√°rias marcas.
+Voc√™ foi contratado por ela para desenvolver uma API que ser√° utilizada pelo front-end que trabalha na empresa.
+A Shirt Store disponibilizou o script do banco de dados que j√° foi feito por um DBA.
 
-A plataforma ter· as tabelas abaixo
-Usu·rios
+A plataforma ter√° as tabelas abaixo
+Usu√°rios
 Marca
 Camisetas
 Tamanhos
 Cores
 
 Regras
-Ter„o dois tipos de usu·rios: os cliente e as empresas.
+Ter√£o dois tipos de usu√°rios: os cliente e as empresas.
 Os clientes podem se cadastrar na plataforma livremente.
-Um Empresa pode ser cadastrada livremente j· criando um usu·rio no inicio
-As empresas podem conter v·rios usu·rios
+Um Empresa pode ser cadastrada livremente j√° criando um usu√°rio no inicio
+As empresas podem conter v√°rios usu√°rios
 
-Somente os usu·rios da empresa podem cadastrar uma camiseta.
-Ex. O usu·rio1 da empresa Adidas adiciona as camisetas da marca.
+Somente os usu√°rios da empresa podem cadastrar uma camiseta.
+Ex. O usu√°rio1 da empresa Adidas adiciona as camisetas da marca.
 
-Uma camiseta È composta por marca, descriÁ„o, tamanho e cor.
+Uma camiseta √© composta por marca, descri√ß√£o, tamanho e cor.
 Uma camiseta tem somente uma marca vinculada
-Uma camiseta pode ter v·rios tamanhos e cores
+Uma camiseta pode ter v√°rios tamanhos e cores
 
-N„o pode ter uma empresa cadastrada sem usu·rios
+N√£o pode ter uma empresa cadastrada sem usu√°rios
 
 Suas Tarefas
 Criar um projeto chamado Senai.ShirtStore.WebApi
-Disponibilizar um documentaÁ„o dos endpoits do projeto usando Swagger
+Disponibilizar um documenta√ß√£o dos endpoits do projeto usando Swagger
 Disponibilizar o teste dos endpoints utilizando o Postman
-Disponibilizar os endpoints para as aÁıes listadas abaixo
+Disponibilizar os endpoints para as a√ß√µes listadas abaixo
 	- Login
 	- CRUD de Marca
 	- CRUD de Camisetas
-	- CRUD de usu·rios
-	- InserÁ„o de novos usu·rios  que ser„o cadastrados por um usu·rio da empresa
-	- DeleÁ„o de usu·rios  que ser· feita por outro usu·rio da empresa
+	- CRUD de usu√°rios
+	- Inser√ß√£o de novos usu√°rios  que ser√£o cadastrados por um usu√°rio da empresa
+	- Dele√ß√£o de usu√°rios  que ser√° feita por outro usu√°rio da empresa
 	
 Regras adicionais
 	Deve ter um acesso que lista todas as marcas disponiveis
 	Deve ter um acesso que lista todos os tamanhos disponiveis 
 	Deve ter um acesso para que as empresas vejam somente as suas camisetas
-	Deve ter um acesso para que os clientes vejam as camisetas selecionando uma determinada marca
+	
+Desafios extras
+	Fazer um acesso para que os clientes vejam as camisetas selecionando uma determinada marca
