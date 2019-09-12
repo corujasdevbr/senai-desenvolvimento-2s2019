@@ -1,45 +1,41 @@
-O Aplicativo Shirt Store é uma plataforma onde são mostrado as Camisetas de várias marcas.
+﻿O Aplicativo Shirt Store é uma plataforma onde são mostradas as Camisetas de várias marcas.
 Você foi contratado por ela para desenvolver uma API que será utilizada pelo front-end que trabalha na empresa.
-A Shirt Store disponibilizou o script do banco de dados que já foi feito por um DBA.
 
 A plataforma terá as tabelas abaixo
 Usuários
-Marca
+Perfis (Gerente, Atendente)
+Empresas
 Camisetas
 Tamanhos
 Cores
 
-Regras
-Terão dois tipos de usuários: os cliente e as empresas.
-Os clientes podem se cadastrar na plataforma livremente.
-Um Empresa pode ser cadastrada livremente já criando um usuário no inicio
-As empresas podem conter vários usuários
+Por exemplo: um usuário com perfil empresa@email.com e senha 123456, com perfil de Gerente, é da empresa 'Khelf' que cadastra uma camiseta com descrição 'Khelf, nunca nem comprei.' e possui os tamanhos P nas cores Azul (3 unidades) e Roxa (2 unidades), tamanho G na cor Preta (1 unidade) e M na cor cinza (0 - nenhuma unidade).
 
+Regras
+As empresas podem conter vários usuários cadastrados.
 Somente os usuários da empresa podem cadastrar uma camiseta.
 Ex. O usuário1 da empresa Adidas adiciona as camisetas da marca.
+Qualquer pessoa, mesmo que não esteja com o token, pode visualizar as empresas e quais camisetas possuem (mas não conseguem visualizar os tamanhos e nem as cores).
+E as empresas somente podem visualizar suas próprias camisetas. O usuário não pode visualizar as camisetas de outras marcas.
 
-Uma camiseta é composta por marca, descrição, tamanho e cor.
-Uma camiseta tem somente uma marca vinculada
-Uma camiseta pode ter vários tamanhos e cores
+Uma camiseta é composta por marca, descrição, tamanho, cor e quantidade;
+Uma camiseta tem somente uma marca vinculada;
+Uma camiseta pode ter vários tamanhos e cores;
 
-Não pode ter uma empresa cadastrada sem usuários
+Não pode ter uma empresa cadastrada sem usuários;
 
 Suas Tarefas
-Criar um projeto chamado Senai.ShirtStore.WebApi
-Disponibilizar um documentação dos endpoits do projeto usando Swagger
-Disponibilizar o teste dos endpoints utilizando o Postman
-Disponibilizar os endpoints para as ações listadas abaixo
-	- Login
-	- CRUD de Marca
-	- CRUD de Camisetas
-	- CRUD de usuários
-	- Inserção de novos usuários  que serão cadastrados por um usuário da empresa
-	- Deleção de usuários  que será feita por outro usuário da empresa
+Criar um projeto chamado Senai.ShirtStore.WebApi;
+Disponibilizar uma documentação dos endpoits do projeto usando Swagger;
+Disponibilizar o teste dos endpoints utilizando o Postman;
+Disponibilizar os endpoints para as ações listadas abaixo:
+	- Login;
+	- CRUD de Marcas;
+	- CRUD de Camisetas;
+	- Somente um Gerente da marca pode cadastrar outro usuário da própria marca;
+	- Um Gerente da marca pode desativar outro da própria empresa;
 	
 Regras adicionais
-	Deve ter um acesso que lista todas as marcas disponiveis
-	Deve ter um acesso que lista todos os tamanhos disponiveis 
-	Deve ter um acesso para que as empresas vejam somente as suas camisetas
-	
-Desafios extras
-	Fazer um acesso para que os clientes vejam as camisetas selecionando uma determinada marca
+	Deve ter um acesso que lista todas as marcas disponíveis;
+	Deve ter um acesso que lista todos os tamanhos disponíveis;
+	Deve ter um acesso para que as empresas vejam somente as suas camisetas;
