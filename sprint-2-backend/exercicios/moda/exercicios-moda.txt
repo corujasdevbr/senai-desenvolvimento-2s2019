@@ -1,16 +1,43 @@
-A empresa Moda contratou você para desenvolver a API para disponibilizar todos os seus itens de produção.
-Uma determinada camiseta pode pertencer somente a uma marca 
-(ex.: Khelf), porém, pode ter vários tamanhos (ex.: P, M, G e GG).
+O Aplicativo Shirt Store é uma plataforma onde são mostrado as Camisetas de várias marcas.
+Você foi contratado por ela para desenvolver uma API que será utilizada pelo front-end que trabalha na empresa.
+A Shirt Store disponibilizou o script do banco de dados que já foi feito por um DBA.
 
-BD: a empresa disponibilizou o arquivo script_moda.sql - BD M_Moda/T_Modas;
-BackEnd: criar um projeto chamado Senai.Moda.WebApi;
-Postman: disponibilizar todas as requisições solicitadas;
-Swagger: adicionar a documentação ao seu projeto;
+A plataforma terá as tabelas abaixo
+Usuários
+Marca
+Camisetas
+Tamanhos
+Cores
 
+Regras
+Terão dois tipos de usuários: os cliente e as empresas.
+Os clientes podem se cadastrar na plataforma livremente.
+Um Empresa pode ser cadastrada livremente já criando um usuário no inicio
+As empresas podem conter vários usuários
 
-CRUD de Marca e Camiseta
+Somente os usuários da empresa podem cadastrar uma camiseta.
+Ex. O usuário1 da empresa Adidas adiciona as camisetas da marca.
 
+Uma camiseta é composta por marca, descrição, tamanho e cor.
+Uma camiseta tem somente uma marca vinculada
+Uma camiseta pode ter vários tamanhos e cores
 
-Selecionar todas as camisetas e suas marcas
-Selecionar todas as camisetas de uma determinada marca
-Selecionar todas as camisetas de um determinado tamanho juntamente com sua marca
+Não pode ter uma empresa cadastrada sem usuários
+
+Suas Tarefas
+Criar um projeto chamado Senai.ShirtStore.WebApi
+Disponibilizar um documentação dos endpoits do projeto usando Swagger
+Disponibilizar o teste dos endpoints utilizando o Postman
+Disponibilizar os endpoints para as ações listadas abaixo
+	- Login
+	- CRUD de Marca
+	- CRUD de Camisetas
+	- CRUD de usuários
+	- Inserção de novos usuários  que serão cadastrados por um usuário da empresa
+	- Deleção de usuários  que será feita por outro usuário da empresa
+	
+Regras adicionais
+	Deve ter um acesso que lista todas as marcas disponiveis
+	Deve ter um acesso que lista todos os tamanhos disponiveis 
+	Deve ter um acesso para que as empresas vejam somente as suas camisetas
+	Deve ter um acesso para que os clientes vejam as camisetas selecionando uma determinada marca
