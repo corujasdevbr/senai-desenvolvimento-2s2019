@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Senai.Gufos.WebApi.Domains;
@@ -18,6 +19,7 @@ namespace Senai.Gufos.WebApi.Controllers
         CategoriaRepository CategoriaRepository = new CategoriaRepository();
 
         // [Authorize]
+        [EnableCors("CorsPolicy")]
         [HttpGet]
         public IActionResult ListarTodos()
         {

@@ -58,7 +58,9 @@ namespace Senai.Gufos.WebApi
             services.AddCors(options =>
             {
                 options.AddPolicy("CorsPolicy",
-                    builder => builder.AllowAnyOrigin()
+                    builder => builder
+                    .WithOrigins("http://192.168.3.129")
+                        // .AllowAnyOrigin()
                         .AllowAnyMethod()
                         .AllowAnyHeader()
                         .AllowCredentials());
