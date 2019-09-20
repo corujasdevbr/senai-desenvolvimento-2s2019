@@ -19,7 +19,7 @@ namespace Senai.Gufos.WebApi.Controllers
         CategoriaRepository CategoriaRepository = new CategoriaRepository();
 
         // [Authorize]
-        [EnableCors("CorsPolicy")]
+        //[EnableCors("CorsPolicy")]
         [HttpGet]
         public IActionResult ListarTodos()
         {
