@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ViaCep API</title>
+</head>
+
+<body>
+    ViaCep API <br>
+    <input type="number" required name="CEP" id="txtCEP" placeholder="Digite aqui o CEP.">
+    <button type="submit" id="btnBuscarInformacoes" disabled>Gerar</button>
+
+    <p id="resultado"></p>
+    <script>
+        var btn = document.getElementById('btnBuscarInformacoes');
+        var input = document.getElementById('txtCEP');
+        
+        btn.addEventListener("click", function(event) {
+            const url = 'http://viacep.com.br/ws/' + input.value +'/json/';
+            
+            fetch(url)
+                .then(resposta => resposta.json())
+                .then(data => mostraResultado(data) )
+                .catch(erro => console.log('Ocorreu algum erro.'));
+        });
+
+        input.addEventListener('keyup', () =>{
+            if(input.value.length == 8){
+                btn.disabled = false
+            }else{
+                btn.disabled = true
+            }
+        })
+
+        var resultado = document.getElementById('resultado');
+        function mostraResultado(data){
+            if(!data.erro){
+                resultado.textContent = data.logradouro + ', ' 
+                    +  data.bairro + ', ' 
+                    + data.localidade + '-' + data.uf
+                    + ' - CEP ' + data.cep;
+            }else{
+                resultado.textContent = 'O CEP informado é inválido.';
+            }
+        }
+
+    </script>
+</body>
+
+</html>
