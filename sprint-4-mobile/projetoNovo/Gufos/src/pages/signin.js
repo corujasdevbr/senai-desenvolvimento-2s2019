@@ -41,11 +41,13 @@ class SignIn extends Component {
 
     _irParaHome = async (token) => {
         if (token != null) {
-            // await AsyncStorage.setItem('tokenDoUsuario', token);
-            this.props.navigation.navigate('MainNavigator');
-
+            try {
+                await AsyncStorage.setItem('@Gufos:token', token);
+                this.props.navigation.navigate('MainNavigator');
+            } catch (error) {
+                // Error saving data
+            }
         }
-
     }
 
     render() {
@@ -131,7 +133,7 @@ const styles = StyleSheet.create({
     inputLogin: {
         width: 240,
         marginBottom: 10,
-        fontSize: 10
+        fontSize: 16
     }
 });
 
