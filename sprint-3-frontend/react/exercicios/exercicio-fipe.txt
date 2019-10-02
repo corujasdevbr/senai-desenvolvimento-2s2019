@@ -1,5 +1,0 @@
-Dada a API disponível:
-https://deividfortuna.github.io/fipe/
-
-Você deverá criar um página em React onde lista todas as marcas de carro.
-Qaundo o usuário clicar em uma marcar, exibir todos os carros correspondentes.
