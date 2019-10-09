@@ -54,7 +54,7 @@ class Index extends Component {
       return;
     }
 
-    const urlUsuario = Config.url + this.state.username + "?clientid=" + Config.tokenclientid + "&clientsecret=" + Config.tokenclientsecret;
+    const urlUsuario = Config.url + this.state.username ;
 
     const urlRepositorio =  Config.url + this.state.username + "/repos?clientid=" + Config.tokenclientid + "&clientsecret=" + Config.tokenclientsecret;
 
@@ -92,8 +92,8 @@ class Index extends Component {
   }
 
   render() {
-    const { loading } = this.state.loading;
-    const { loadingmessage } = this.state.loadingmessage;
+    const { loading } = this.state;
+    const { loadingmessage } = this.state;
 
     return (
       <div>

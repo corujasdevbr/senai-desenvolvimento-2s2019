@@ -1,5 +1,7 @@
-export default Config = (() => {
-    url = "https://api.github.com/",
-    tokenclientid = "d5bc19cf1d20805db514",
-    tokenclientsecret =  "6d1dac6956abad6f4547d6a8377cff12fcb84570",
-});
+const Config =  {
+    url : "https://api.github.com/users/",
+    tokenclientid : "a0349c3e42be9b0c2830",
+    tokenclientsecret : "441562044e9d2fecbb6a12c867b271e7b5b0df5a"
+};
+
+export default Config;
