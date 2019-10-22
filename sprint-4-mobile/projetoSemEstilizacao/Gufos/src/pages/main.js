@@ -1,8 +1,18 @@
 import React, { Component } from 'react'
-import { Text, View } from 'react-native'
+import { Text, View, Image, StyleSheet } from 'react-native'
 import { FlatList } from 'react-native-gesture-handler';
 
 class Main extends Component {
+
+    static navigationOptions = {
+        tabBarIcon: () => (
+            <Image 
+                source={require("../assets/img/calendar.png")}
+                // style={{ width: 25, height: 25, tintColor: 'purple' }}
+                style={styles.tabNavigatorIconHome}
+            />
+        )
+    }
 
     constructor(props) {
         super(props);
@@ -41,5 +51,13 @@ class Main extends Component {
         )
     }
 }
+
+const styles = StyleSheet.create({
+    tabNavigatorIconHome: {
+        width: 25,
+        height: 25,
+        tintColor: 'white'
+    }
+})
 
 export default Main

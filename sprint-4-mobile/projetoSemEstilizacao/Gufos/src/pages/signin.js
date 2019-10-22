@@ -10,7 +10,7 @@ class SignIn extends Component {
     }
 
     _realizarLogin = async () => {
-        console.warn(this.state.email + this.state.senha)
+        // console.warn(this.state.email + this.state.senha)
         fetch('http://192.168.7.85:5000/api/login', {
             method: 'POST',
             headers: {

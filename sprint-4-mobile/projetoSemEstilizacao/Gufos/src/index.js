@@ -8,14 +8,30 @@ import SignInScreen from './pages/signin'
 
 const AuthStack = createStackNavigator({ Sign: { screen: SignInScreen } })
 
-const MainNavigator = createBottomTabNavigator({
-    Main: {
-        screen: MainScreen
+const MainNavigator = createBottomTabNavigator(
+    {
+        Main: {
+            screen: MainScreen
+        },
+        Profile: {
+            screen: ProfileScreen
+        }
     },
-    Profile: {
-        screen: ProfileScreen
+    {
+        initialRouteName: 'Main',
+        swipeEnabled: false,
+        tabBarOptions: {
+            showIcon: true,
+            showLabel: false,
+            inactiveBackgroundColor: '#B727FF',
+            activeBackgroundColor: "#9900e6",
+            style: {
+                width: '100%',
+                height: 50
+            }
+        }
     }
-})
+)
 
 export default createAppContainer(
     createSwitchNavigator(
