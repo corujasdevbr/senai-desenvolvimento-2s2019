@@ -1,0 +1,16 @@
+Exercício Books.
+
+Execute o projeto Senai.Books.WebApi
+
+A documentação da api encontra-se em 
+localhost:5000/swagger
+
+Crie um app com React native
+
+Crie um bottom tab navigator que contenha 3 telas (Livro, Editora, Genero)
+
+Liste os dados da Api em suas respectivas telas
+
+Obs: 
+- pode utilizar XHR, Fetch ou axios
+- Estilize o app como desejar
