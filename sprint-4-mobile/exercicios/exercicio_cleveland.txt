@@ -16,7 +16,6 @@ Você deverá criar um aplicativo mobile a fim de apresentar a lista de médicos
 Dica:
 Para que você consiga acesso pela rede, no launchSettings.json, ao invés de localhost:5000, troque o localhost para o ip da sua máquina. Caso não lembre, abra o cmd e digite ipconfig para apresentar a lista de configurações.
 
-
 Desafios Extras
 No banco de dados e na API, você deverá ser capaz de criar um item para informar se o médico está ativo ou inativo na clínica.
 
@@ -25,4 +24,7 @@ Ao realizar a requisição, GET /api/medicos, apresentar no mobile, a habilidade
 
 No mobile, você deverá ser capaz de criar um filtro para buscar os médicos por especialidade e além disso, listar somente os médicos ativos.
 O desafio é que vocês consigam criar pelo mobile esse filtro, mas outra implementação é que pode ser feita pelo backend.
+
+Desafios Super Extras
+Criar um drawer navigation para que uma aba apareça com as informações sobre a clínica.
 
