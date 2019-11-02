@@ -1,5 +1,7 @@
 CREATE DATABASE Cleveland;
 
+USE Cleveland;
+
 CREATE TABLE Especialidades(
 	EspecialidadeID INT PRIMARY KEY IDENTITY NOT NULL,
 	Nome VARCHAR(255) NOT NULL
@@ -29,4 +31,6 @@ INSERT INTO Medicos (
 SELECT * FROM Medicos M
 JOIN Especialidades E
 ON M.EspecialidadeID = E.EspecialidadeID
+
+
 
