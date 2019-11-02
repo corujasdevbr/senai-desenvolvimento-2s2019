@@ -1,4 +1,5 @@
-﻿using Senai.Cleveland.WebApi.Domains;
+﻿using Microsoft.EntityFrameworkCore;
+using Senai.Cleveland.WebApi.Domains;
 using Senai.Cleveland.WebApi.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -13,7 +14,7 @@ namespace Senai.Cleveland.WebApi.Repositories
         {
             using(ClevalandContext ctx = new ClevalandContext())
             {
-                return ctx.Medicos.ToList();
+                return ctx.Medicos.Include(x => x.Especialidade).ToList();
             }
         }
     }
