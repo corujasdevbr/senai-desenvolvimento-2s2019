@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Git\\senai-dev-2s2019\\sprint-4-mobile\\exercicios\\exercicio_cleveland\\Senai.Cleveland.WebApi\\Senai.Cleveland.WebApi.csproj": {}
+    "C:\\_github\\senai-dev-2s2019\\sprint-4-mobile\\exercicios\\exercicio_cleveland\\Senai.Cleveland.WebApi\\Senai.Cleveland.WebApi.csproj": {}
   },
   "projects": {
-    "C:\\Git\\senai-dev-2s2019\\sprint-4-mobile\\exercicios\\exercicio_cleveland\\Senai.Cleveland.WebApi\\Senai.Cleveland.WebApi.csproj": {
+    "C:\\_github\\senai-dev-2s2019\\sprint-4-mobile\\exercicios\\exercicio_cleveland\\Senai.Cleveland.WebApi\\Senai.Cleveland.WebApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Git\\senai-dev-2s2019\\sprint-4-mobile\\exercicios\\exercicio_cleveland\\Senai.Cleveland.WebApi\\Senai.Cleveland.WebApi.csproj",
+        "projectUniqueName": "C:\\_github\\senai-dev-2s2019\\sprint-4-mobile\\exercicios\\exercicio_cleveland\\Senai.Cleveland.WebApi\\Senai.Cleveland.WebApi.csproj",
         "projectName": "Senai.Cleveland.WebApi",
-        "projectPath": "C:\\Git\\senai-dev-2s2019\\sprint-4-mobile\\exercicios\\exercicio_cleveland\\Senai.Cleveland.WebApi\\Senai.Cleveland.WebApi.csproj",
-        "packagesPath": "C:\\Users\\erikv\\.nuget\\packages\\",
-        "outputPath": "C:\\Git\\senai-dev-2s2019\\sprint-4-mobile\\exercicios\\exercicio_cleveland\\Senai.Cleveland.WebApi\\obj\\",
+        "projectPath": "C:\\_github\\senai-dev-2s2019\\sprint-4-mobile\\exercicios\\exercicio_cleveland\\Senai.Cleveland.WebApi\\Senai.Cleveland.WebApi.csproj",
+        "packagesPath": "C:\\Users\\admin.local\\.nuget\\packages\\",
+        "outputPath": "C:\\_github\\senai-dev-2s2019\\sprint-4-mobile\\exercicios\\exercicio_cleveland\\Senai.Cleveland.WebApi\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\erikv\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\admin.local\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

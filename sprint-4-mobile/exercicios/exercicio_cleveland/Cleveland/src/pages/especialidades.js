@@ -15,6 +15,7 @@ import { FlatList } from 'react-native-gesture-handler'
 // Components
 import Title from "../components/title"
 
+const url = 'http://192.168.7.85';
 class Especialidades extends Component {
 
     constructor(props) {
@@ -31,7 +32,7 @@ class Especialidades extends Component {
 
     carregarLista = async () => {
         console.log('oi')
-        await fetch('http://192.168.0.6:5000/api/especialidades')
+        await fetch((url+':5000/api/especialidades'))
             .then(response => response.json())
             .then(data => this.setState({ especialidades: data }))
             .catch(error => console.log(error))
@@ -39,7 +40,7 @@ class Especialidades extends Component {
 
     _cadastrar = async () => {
         this.setState({btnState:true})
-        await fetch('http://192.168.0.6:5000/api/especialidades', {
+        await fetch((url+':5000/api/especialidades'), {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',

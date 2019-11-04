@@ -13,6 +13,7 @@ import { FlatList } from 'react-native-gesture-handler'
 // Components
 import Title from "../components/title"
 
+const url = 'http://192.168.7.85';
 class Medicos extends Component {
 
     constructor(props) {
@@ -35,7 +36,7 @@ class Medicos extends Component {
     }
 
     carregarLista = async () => {
-        await fetch('http://192.168.0.6:5000/api/medicos')
+        await fetch((url+':5000/api/medicos'))
             .then(response => response.json())
             .then(data => this.setState({ medicos: data }))
             .catch(error => console.warn(error))
