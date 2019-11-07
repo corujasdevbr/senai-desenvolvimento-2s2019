@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\_github\\senai-dev-2s2019\\sprint-4-mobile\\exercicios\\exercicio_cleveland\\Senai.Cleveland.WebApi\\Senai.Cleveland.WebApi.csproj": {}
+    "C:\\Git\\senai-dev-2s2019\\sprint-4-mobile\\exercicios\\exercicio_cleveland\\Senai.Cleveland.WebApi\\Senai.Cleveland.WebApi.csproj": {}
   },
   "projects": {
-    "C:\\_github\\senai-dev-2s2019\\sprint-4-mobile\\exercicios\\exercicio_cleveland\\Senai.Cleveland.WebApi\\Senai.Cleveland.WebApi.csproj": {
+    "C:\\Git\\senai-dev-2s2019\\sprint-4-mobile\\exercicios\\exercicio_cleveland\\Senai.Cleveland.WebApi\\Senai.Cleveland.WebApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\_github\\senai-dev-2s2019\\sprint-4-mobile\\exercicios\\exercicio_cleveland\\Senai.Cleveland.WebApi\\Senai.Cleveland.WebApi.csproj",
+        "projectUniqueName": "C:\\Git\\senai-dev-2s2019\\sprint-4-mobile\\exercicios\\exercicio_cleveland\\Senai.Cleveland.WebApi\\Senai.Cleveland.WebApi.csproj",
         "projectName": "Senai.Cleveland.WebApi",
-        "projectPath": "C:\\_github\\senai-dev-2s2019\\sprint-4-mobile\\exercicios\\exercicio_cleveland\\Senai.Cleveland.WebApi\\Senai.Cleveland.WebApi.csproj",
-        "packagesPath": "C:\\Users\\admin.local\\.nuget\\packages\\",
-        "outputPath": "C:\\_github\\senai-dev-2s2019\\sprint-4-mobile\\exercicios\\exercicio_cleveland\\Senai.Cleveland.WebApi\\obj\\",
+        "projectPath": "C:\\Git\\senai-dev-2s2019\\sprint-4-mobile\\exercicios\\exercicio_cleveland\\Senai.Cleveland.WebApi\\Senai.Cleveland.WebApi.csproj",
+        "packagesPath": "C:\\Users\\erikv\\.nuget\\packages\\",
+        "outputPath": "C:\\Git\\senai-dev-2s2019\\sprint-4-mobile\\exercicios\\exercicio_cleveland\\Senai.Cleveland.WebApi\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\admin.local\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\erikv\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -82,10 +82,16 @@
             }
           },
           "imports": [
-            "net461"
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
           ],
           "assetTargetFallback": true,
-          "warn": true
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }
