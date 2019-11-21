@@ -53,15 +53,9 @@ namespace Senai.Gufos.WebApi
                 c.SwaggerDoc("v1", new Swashbuckle.AspNetCore.Swagger.Info { Title = "Gufos API", Version = "v1" });
             });
 
-               //Adiciona o Cors ao projeto
-            //Veremos em breve
             services.AddCors(options =>
             {
-                options.AddPolicy("CorsPolicy",
-                    builder => builder.AllowAnyOrigin()
-                        .AllowAnyMethod()
-                        .AllowAnyHeader()
-                        .AllowCredentials());
+                options.AddPolicy("CorsPolicy", builder => builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader().AllowCredentials());
             });
 
         }
@@ -74,6 +68,8 @@ namespace Senai.Gufos.WebApi
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseCors("CorsPolicy");
+
             app.UseAuthentication();
 
             app.UseSwagger();
@@ -82,9 +78,6 @@ namespace Senai.Gufos.WebApi
             {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "Gufos API V1");
             });
-
-            //Habilita o Cors
-            app.UseCors("CorsPolicy");
 
             app.UseMvc();
 

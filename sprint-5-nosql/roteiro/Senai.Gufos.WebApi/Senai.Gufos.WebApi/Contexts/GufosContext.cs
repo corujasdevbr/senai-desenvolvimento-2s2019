@@ -19,6 +19,8 @@ namespace Senai.Gufos.WebApi.Domains
         public virtual DbSet<Eventos> Eventos { get; set; }
         public virtual DbSet<Usuarios> Usuarios { get; set; }
 
+        public virtual DbSet<Presencas> Presencas { get; set; }
+
         // Unable to generate entity type for table 'dbo.Presencas'. Please see the warning messages.
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -32,6 +34,19 @@ namespace Senai.Gufos.WebApi.Domains
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<Presencas>().HasKey(p => new { p.IdUsuario, p.IdEvento });
+
+            modelBuilder.Entity<Presencas>()
+            .HasOne<Usuarios>(sc => sc.Usuario)
+            .WithMany(s => s.Presencas)
+            .HasForeignKey(sc => sc.IdUsuario);
+
+
+            modelBuilder.Entity<Presencas>()
+                .HasOne<Eventos>(sc => sc.Evento)
+                .WithMany(s => s.Presencas)
+                .HasForeignKey(sc => sc.IdEvento);
+
             modelBuilder.Entity<Categorias>(entity =>
             {
                 entity.HasKey(e => e.IdCategoria);

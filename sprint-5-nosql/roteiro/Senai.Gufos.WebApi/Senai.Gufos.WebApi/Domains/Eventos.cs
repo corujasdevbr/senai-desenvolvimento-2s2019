@@ -14,5 +14,6 @@ namespace Senai.Gufos.WebApi.Domains
         public int? IdCategoria { get; set; }
 
         public Categorias IdCategoriaNavigation { get; set; }
+        public List<Presencas> Presencas { get; set; }
     }
 }

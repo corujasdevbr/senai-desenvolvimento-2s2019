@@ -10,5 +10,6 @@ namespace Senai.Gufos.WebApi.Domains
         public string Email { get; set; }
         public string Senha { get; set; }
         public string Permissao { get; set; }
+        public List<Presencas> Presencas { get; set; }
     }
 }

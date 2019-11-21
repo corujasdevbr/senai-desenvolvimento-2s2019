@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "faf979fe-4cc9-4524-bddf-98f50eaf2d83",
+		"_postman_id": "d15a455f-8a59-4774-9cf6-b61868f4b43e",
 		"name": "Senai.Gufos",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -233,6 +233,66 @@
 					"response": []
 				}
 			]
+		},
+		{
+			"name": "Mapas",
+			"item": [
+				{
+					"name": "Mapas.Buscar",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/api/localizacoes",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"localizacoes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Mapas.Cadastrar",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"latitude\" : \"-23.5365665\",\n\t\"longitude\" : \"-46.6462884\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/api/localizacoes",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"localizacoes"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
 		}
 	]
 }

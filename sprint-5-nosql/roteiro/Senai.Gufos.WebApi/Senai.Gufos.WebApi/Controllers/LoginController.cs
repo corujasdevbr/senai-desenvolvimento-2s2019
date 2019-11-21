@@ -30,6 +30,7 @@ namespace Senai.Gufos.WebApi.Controllers
                 {
                     new Claim(JwtRegisteredClaimNames.Email, usuarioBuscado.Email),
                     new Claim(JwtRegisteredClaimNames.Jti, usuarioBuscado.IdUsuario.ToString()),
+                    // é a permissão do usuário
                     new Claim(ClaimTypes.Role, usuarioBuscado.Permissao),
                 };
 

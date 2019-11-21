@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Senai.Gufos.WebApi.Domains;
+using Senai.Gufos.WebApi.Interfaces;
 using Senai.Gufos.WebApi.Repositories;
 
 namespace Senai.Gufos.WebApi.Controllers
@@ -15,9 +16,16 @@ namespace Senai.Gufos.WebApi.Controllers
     [ApiController]
     public class CategoriasController : ControllerBase
     {
-        CategoriaRepository CategoriaRepository = new CategoriaRepository();
+        //CategoriaRepository CategoriaRepository = new CategoriaRepository();
 
-        // [Authorize]
+        private ICategoriaRepository CategoriaRepository { get; set; }
+
+        public CategoriasController()
+        {
+            CategoriaRepository = new CategoriaRepository();
+        }
+
+        [Authorize]
         [HttpGet]
         public IActionResult ListarTodos()
         {
@@ -38,7 +46,7 @@ namespace Senai.Gufos.WebApi.Controllers
             }
         }
 
-        // [Authorize(Roles = "ADMINISTRADOR")]
+        [Authorize(Roles = "ADMINISTRADOR")]
         [HttpGet("{id}")]
         public IActionResult BuscarPorId(int id)
         {
