@@ -1,0 +1,2 @@
+Encontre todos os registros em que tenha sido concluído no dia 01.
+Encontre todos os registros em que tenha sido concluído no ano 2018.
